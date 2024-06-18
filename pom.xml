@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>senac</groupId>
-	<artifactId>eCO2You</artifactId>
+	<groupId>senai</groupId>
+	<artifactId>TextilTech</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1</version>
-	<name>eCO2You</name>
+	<name>TextilTech</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
@@ -46,7 +46,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>eCO2You</finalName>
+		<finalName>TextilTech</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
