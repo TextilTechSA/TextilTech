@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    text-decoration: none;
+}
+nav{
+    background-color: #ffffff;
+    padding: 20px 20px 20px 20px;
+}
+svg{
+    height: 849px;
+    width: 1920px;
+}
+#Eco2you{
+    height: 58px;
+    width: 80px;
+    text-align: left;
+    padding-right: 500px;
+}
+.link-nav{
+    padding-left: 100px;
+
+}
+.container {
+    display: inline-block;
+    position: relative;
+  }
+.container p {
+    position: absolute;
+    top: 350px;
+    right: 900px;
+    font-size: 200px;
+    color: white;
+  }
+.container h2 {
+    position: absolute;
+    top: 360px;
+    right: 1140px;
+    font-size: 24px;
+    color: white;
+    opacity: 70%;
+  }
+.container h3 {
+    position: absolute;
+    top: 560px;
+    right: 860px;
+    font-size: 24px;
+    color: white;
+    opacity: 70%;
+  }

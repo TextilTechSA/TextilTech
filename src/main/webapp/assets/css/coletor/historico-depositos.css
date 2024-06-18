@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0; box-sizing : border-box;
+	font-family: "Poppins", sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+	min-height: 100vh;
+}
+
+a svg {
+	margin: 1vh;
+	height: 3vh;
+	width: 2vw;
+}
+
+table, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 1vh;
+}
+
+table {
+	width: 100vw;
+}
+
+th {
+	background-color: #E8EDDE;
+}
+
+td {
+	text-align: center;
+}
+
+#coluna-data {
+	width: 15%
+}
+
+#coluna-armazem {
+	width: 25%
+}
+
+#coluna-pontuacao {
+	width: 15%
+}
+
+#coluna-resumo {
+	width: 45%
+}
+
+caption {
+	font-size: xx-large;
+}

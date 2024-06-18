@@ -1,0 +1,160 @@
+a svg {
+height: 2vh;
+width: 2vw;
+margin-top: 1.5vh;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #FFFFFF;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.vl {
+	height: 10vh;
+	border-left: 2px solid;
+	margin: 0 2vw 0 2vw;
+}
+
+.container-info {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100vw;
+	height: 92vh;
+	margin-top: -30vh;
+}
+
+.container-perfil .ranking {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 59vw;
+	height: 90vh;
+	margin-top: 10vh;
+}
+
+.container-perfil {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #E8EDDE;
+	border-radius: 10px;
+	height: 25vh;
+	width: 59vw;
+	padding: 1vw;
+}
+
+#foto-coletor {
+	border-radius: 100%;
+	height: 16vh;
+	width: 8vw;
+	background-color: #FFFFFF;
+	border: 2px solid balck;
+}
+
+.nome-coletor {
+	font-size: 3vh;
+	font-weight: bold;
+	margin-bottom: 1vh;
+}
+
+.endereco-coletor {
+	font-size: 2.5vh;
+	margin-top: 1vh;
+}
+
+.ranking {
+	width: 59vw;
+	height: 64vh;
+	background-color: #F5F4F3;
+	border-radius: 10px;
+	padding: 1vw;
+	margin-top: 1vw;
+}
+
+.proximo-deposito {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	width: 39vw;
+	height: 90vh;
+	background-color: #F5F4F3;
+	border-radius: 10px;
+}
+
+.proximo-deposito span {
+	font-weight: bold;
+	font-size: 2.5vh;
+	margin: 3vh 0 3vh 0;
+}
+
+#title {
+	align-self: flex-start;
+	margin-left: 1vw;
+	font-size: 2vh;
+	font-weight: bold;
+}
+
+.item-deposito {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	padding: 1vh;
+	height: 27.5%;
+	width: 95%;
+	margin-bottom: 2vh;
+}
+
+.container-acoes {
+	align-self: flex-start;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 4vh;
+	width: 4vw;
+}
+
+.container-acoes a {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 4vh;
+	width: 4vw;
+	border-radius: 100%;
+	margin: 1vh;
+}
+
+.container-acoes #lapis{
+	background-color: #D3D3D3;
+}
+
+.container-acoes #lixeira{
+	background-color: #ff6961;
+}
+
+.container-acoes svg {
+	width: 2vw;
+	height: 2vh;
+}
+
+.container-acoes svg {
+	width: 2vw;
+	height: 2vh;
+}
