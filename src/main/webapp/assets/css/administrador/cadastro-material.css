@@ -1,0 +1,47 @@
+body{
+    background-color: #E8EDDE;
+}
+.box{
+    background-color: #ffffff40;
+    border-radius: 8px;
+    width: 683px;
+    margin: 0px 600px;
+    height: 685px;
+    margin-top: 150px;
+}
+h2{
+    background-color: #50806B;
+    color: #ffffff;
+    margin: -10px;
+    padding: 30px;
+}
+.box h1{
+    text-align: center;
+    color: #0B3B3C;
+    font-size: 50px;
+    padding-top: 100px;
+}
+input{
+    height: 53px;
+    width: 426px;
+    font-size: 20px;
+    border: 2px solid #000000;
+    margin-bottom: 20px;
+}
+.nome_material{
+    text-align: center;
+}
+.box h4{
+    margin-top: 150px;
+    margin-left: 125px;
+    font-size: 14px;
+}
+.box button{
+    margin-left: 125px;
+    height: 53px;
+    width: 433px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #50806B;
+    color: #ffffff;
+}

@@ -1,0 +1,139 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #FFFFFF;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.box {
+	height: 60vh;
+	background-color: #E8EDDE;
+	margin-bottom: 1vw;
+}
+
+.box a {
+	display: inline-block;
+	background-color: #50806B;
+	border-radius: 6px;
+	padding: 0.5vw;
+	align-items: center;
+	text-align: center;
+	cursor: pointer;
+	width: 8vw;
+}
+
+.vl {
+	border-left: 2px solid black;
+	height: 20vh;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.usuarios {
+	margin: 2vw 4vw 2vw 4vw;
+	padding: 1vw;
+}
+
+.container-usuarios {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 50vh;
+}
+
+.items-usuarios {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	background-color: #F3F2F0;
+	border-radius: 6px;
+	padding: 1.5vw;
+	height: 35vh;
+	width: 25vw;
+}
+
+.items-usuarios a {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	display: block;
+	align-items: center;
+	background-color: #50806B;
+	border-radius: 6px;
+	padding: 1vw;
+	text-align: center;
+	cursor: pointer;
+	width: 12vw;
+	margin: 1vw;
+}
+
+.items-usuarios svg {
+	width: 20vw;
+	height: 20vh;
+}
+
+.perguntas-frequentes {
+	background-color: #E8EDDE;
+	border-radius: 5px;
+	margin: 2vw 4vw 2vw 4vw;
+	height: 30vh;
+}
+
+.container-perguntas-frequentes {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 35vh;
+	margin: 1vw;
+	padding: 1vw;
+	margin-top: -100px;
+}
+
+.items-perguntas-frequentes {
+	width: 30vw;
+	font-size: 18px;
+}
+
+.intens-respostas-perguntas-frequentes {
+	padding-top: 20px;
+}
+
+#titulo-perguntas-frequentes {
+	padding-top: 2vh;
+	margin: 3vh;
+}
+
+h2 {
+	padding-bottom: 10px;
+}
+
+#sub-titulo {
+	padding-bottom: 20px;
+}
+
+#container-texto {
+	font-size: 20px;
+}
+
+.itens-usuario {
+	padding-bottom: 10px;
+	font-size: 25px;
+}
+
+.descricao-usuario {
+	padding-bottom: 10px;
+}

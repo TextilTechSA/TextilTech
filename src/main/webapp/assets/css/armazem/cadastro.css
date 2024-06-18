@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #E8EDDE;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.tab {
+	display: none;
+}
+
+a svg {
+	margin: 0.5vh;
+	width : 2vw;
+	height: 3vh;
+}
+
+.container-cadastro {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 95vh;
+}
+
+form {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: #EEF2E7;
+	width: 30vw;
+	height: 75vh;
+	border-radius: 5px;
+}
+
+.item-cadastro {
+	margin: 1vw;
+}
+
+.container-items {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.container-cadastro-row {
+	display: flex;
+	flex-flow: row nowrap;
+	margin: 0 auto;
+}
+
+.item-cadastro-row {
+	margin-left: 1vw;
+}
+
+.item-cadastro-row input {
+	display: block;
+	width: 10vw;
+	height: 5vh;
+	border-radius: 5px;
+	border: 0;
+	margin-right: 1vw;
+	padding: 0 0.5vw 0 0.5vw;
+}
+
+.item-cadastro input {
+	display: block;
+	width: 22vw;
+	height: 5vh;
+	border-radius: 5px;
+	border: 0;
+	padding-left: 1vw;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+#nextBtn {
+	border: none;
+	border-radius: 5px;
+	color: #FFFFFF;
+	background-color: #50806B;
+	height: 5vh;
+	width: 14vw;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+#nextBtn:hover {
+	opacity: 0.8;
+}
+
+#prevBtn {
+	border: none;
+	border-radius: 5px;
+	color: #FFFFFF;
+	background-color: #50806B;
+	height: 5vh;
+	width: 14vw;
+	cursor: pointer;
+	transition: all 0.3 ease;
+}
+
+#prevBtn:hover {
+	opacity: 0.8;
+}
+
+.step {
+	height: 2vh;
+	width: 1vw;
+	background-color: #439E6F;
+	border: none;
+	border-radius: 100%;
+	display: inline-block;
+	opacity: 0.6;
+}
+
+.step.active {
+	opacity: 1;
+}
+
+.step.finish {
+	background-color: #439E6F;
+}
+
+span {
+	font-weight: bold;
+	font-size: 4vh;
+	text-align: center;
+	color: #0B3B3C;
+}
+
+.container-buttons {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 30vw;
+}

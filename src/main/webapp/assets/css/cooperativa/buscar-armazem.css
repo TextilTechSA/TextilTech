@@ -1,0 +1,105 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #FFFFFF;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.text-box {
+	display: flex;
+	width: 100vw;
+	height: 10vh;
+	background-color: #E8EDDE;
+	align-items: center;
+}
+
+.container-search-armazem {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 12vh;
+	width: 100vw;
+	align-items: center;
+	justify-content: center;
+}
+
+.item-search-armazem input {
+	width: 42vw;
+	height: 5vh;
+	border-radius: 8px;
+	border: 0;
+	background-color: #F4F2F0;
+	margin: 0.5vw;
+	padding: 0.5vw;
+}
+
+.button-search-armazem input {
+	width: 8vw;
+	height: 5vh;
+	border-radius: 8px;
+	border: 0;
+	background-color: #F4F2F0;
+	margin: 0.5vw;
+	padding: 0.5vw;
+	transition: background-color 0.3s ease;
+}
+
+.button-search-armazem input:hover {
+	background-color: #50806B;
+}
+
+.container-armazem {
+	display: flex;
+	flex-flow: row wrap;
+	height: 60vh;
+	width: 100vw;
+	justify-content: space-evenly;
+}
+
+.item-armazem {
+	min-width: 10vw;
+	width: 15vw;
+	max-width: 25vw;
+	height: 50vh;
+	background-color: #F4F2F0;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+	transition: flex-grow 0.5s ease;
+}
+
+.item-armazem:hover {
+	flex-grow: 1;
+}
+
+.item-armazem:hover .image-armazem {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.item-armazem a {
+	display: block;
+	align-items: center;
+	text-align: center;
+	background-color: #50806B;
+	border-radius: 5px;
+	margin: 1vw;
+	padding: 0.5vw;
+	cursor: pointer;
+}
+
+.image-armazem {
+	height: 50%;
+	width: 100%;
+}

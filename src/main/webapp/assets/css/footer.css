@@ -1,0 +1,39 @@
+  footer {
+      display: block;
+      background-color: #50806B;
+      color: #FFFFFF;
+      padding: 25px;
+      text-align: center;
+  }
+  
+  footer a {
+  	margin: 0 30px;
+  	text-decoration: none;
+  	color: #FFFFFF;
+  }
+  .container-comeco{
+	display: grid;
+  	grid-template-columns: 200px 200px 200px 200px;
+  	text-align: left;
+  	margin-left: 500px;
+  }
+  .container-meio{
+	display: grid;
+  	grid-template-columns: 200px 200px 200px 200px;
+  	text-align: left;
+  	margin-left: 500px;
+  }
+  .container-final{
+	display: grid;
+  	grid-template-columns: 200px 200px 200px 200px;
+  	text-align: left;
+  	margin-bottom: 10px;
+  	border-bottom: 1px solid #ffffff;
+  	width: 40vw;
+  	margin-left: 500px;
+  	padding-bottom: 10px;
+  }
+  .item-final{
+	text-align: right;
+	margin-right: 600px;
+  }

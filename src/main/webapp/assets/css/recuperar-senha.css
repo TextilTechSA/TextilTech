@@ -1,0 +1,38 @@
+*{
+    background-color: #fefefe;
+}
+#recuperarSenha{
+    font-size: 60px;
+    text-align: center;
+}
+.e-mail{
+    height: 5vh;
+    width: 20vw;
+    border-radius: 12px;
+}
+.senha{
+    height: 5vh;
+    width: 20vw;
+    border-radius: 12px;
+}
+.codigo{
+    height: 5vh;
+    width: 20vw;
+    border-radius: 12px;
+}
+.senhaE-mailEcodigo{
+    font-size: 25px;
+    text-align: center;
+}
+#prevBtn{
+    background-color: #0d0d0d;
+    color: #fefefe;
+}
+#nextBtn{
+    background-color: #0d0d0d;
+    color: #fefefe;
+}
+:placeholder-shown{
+    font-size: 20px;
+    padding-left: 15px;
+}

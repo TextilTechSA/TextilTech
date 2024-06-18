@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #E8EDDE;
+	min-height: 100vh;
+}
+
+a svg {
+	margin: 0.5vh;
+	width: 2vw;
+	height: 3vh;
+}
+
+.container-login {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 95vh;
+}
+
+form {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: #EEF2E7;
+	width: 30vw;
+	height: 55vh;
+	border-radius: 5px;
+}
+
+.container-login span {
+	font: 35px;
+	text-align: center;
+}
+
+.item-login {
+	display: block;
+	margin: 1vw;
+}
+
+.item-login input {
+	width: 20vw;
+	height: 5vh;
+	padding: 1vh;
+	border: none;
+	border-radius: 5px;
+}
+
+span {
+	font-weight: bold;
+	font-size: 4vh;
+	text-align: center;
+	color: #0B3B3C;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+button {
+	width: 15vw;
+	height: 5vh;
+	background-color: #50806B;
+	border: none;
+	border-radius: 5px;
+	color: #ffffff;
+}
+
+.registrar {
+	text-align: center;
+	margin-top: 0.5vh;
+}
+
+.esqueceuSenha {
+	margin-top: 0.5vh;
+}
