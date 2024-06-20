@@ -11,21 +11,12 @@ public class ConexaoFactory {
  
 		Configuration configuracao = new Configuration();
  
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.deposito.Deposito.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.endereco.Endereco.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.item.deposito.ItemDeposito.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.item.retirada.ItemRetirada.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.reciclavel.Reciclavel.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.retirada.Retirada.class);
+		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.funcao.Funcao.class);
+		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.maquina.Maquina.class);
+		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.norma.Norma.class);
 		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.usuario.Usuario.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.conquista.Conquista.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.usuario.empresa.Empresa.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.usuario.empresa.armazem.Armazem.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.usuario.empresa.cooperativa.Cooperativa.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.usuario.pessoa.Pessoa.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.usuario.pessoa.coletor.Coletor.class);
-		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.material.Material.class);
-		
+		configuracao.addAnnotatedClass(br.senai.TextilTech.modelo.entidade.usuario.funcionario.Funcionario.class);
+
 		configuracao.configure("hibernate.cfg.xml");
  
 		ServiceRegistry servico = new StandardServiceRegistryBuilder().applySettings(configuracao.getProperties()).build();

@@ -10,9 +10,8 @@ import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
 
-import br.senac.eco2you.modelo.entidade.usuario.Usuario_;
-import br.senai.TextilTech.modelo.entidade.retirada.Retirada;
 import br.senai.TextilTech.modelo.entidade.usuario.Usuario;
+import br.senai.TextilTech.modelo.entidade.usuario.Usuario_;
 import br.senai.TextilTech.modelo.factory.conexao.ConexaoFactory;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
