@@ -11,19 +11,7 @@
 		<property name="show_sql">true</property>
 		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 		
-		<mapping class="br.senac.eco2you.modelo.entidade.deposito.Deposito" />
 		<mapping class="br.senac.eco2you.modelo.entidade.endereco.Endereco" />
-		<mapping class="br.senac.eco2you.modelo.entidade.item.deposito.ItemDeposito" />
-		<mapping class="br.senac.eco2you.modelo.entidade.item.retirada.ItemRetirada" />
-		<mapping class="br.senac.eco2you.modelo.entidade.reciclavel.Reciclavel" />
-		<mapping class="br.senac.eco2you.modelo.entidade.retirada.Retirada" />
 		<mapping class="br.senac.eco2you.modelo.entidade.usuario.Usuario" />
-		<mapping class="br.senac.eco2you.modelo.entidade.usuario.empresa.armazem.Armazem" />
-		<mapping class="br.senac.eco2you.modelo.entidade.usuario.empresa.cooperativa.Cooperativa" />
-		<mapping class="br.senac.eco2you.modelo.entidade.usuario.empresa.Empresa" />
-		<mapping class="br.senac.eco2you.modelo.entidade.usuario.pessoa.Pessoa" />
-		<mapping class="br.senac.eco2you.modelo.entidade.usuario.pessoa.coletor.Coletor" />
-		<mapping class="br.senac.eco2you.modelo.entidade.conquista.Conquista" />
-		<mapping class="br.senac.eco2you.modelo.entidade.material.Material"/>
 	</session-factory>
 </hibernate-configuration>
