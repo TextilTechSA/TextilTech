@@ -2,11 +2,20 @@ package br.senai.TextilTech.modelo.entidade.maquina;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import br.senai.TextilTech.modelo.entidade.norma.Norma;
 
 public class Maquina implements Serializable {
 
@@ -37,6 +46,10 @@ public class Maquina implements Serializable {
 	
 	@Column(name = "nivel_perigo", length = 65, nullable = true)
 	private String nivelPerigo;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@JoinTable(name = "maquina_has_norma", joinColumns = @JoinColumn(name = "id_maquina"), inverseJoinColumns = @JoinColumn(name = "id_norma"))
+	List<Norma> normas;
 
 	public Maquina(Long id, String nome, String tipo, String descricao, LocalDateTime horarioInicioOperacao,
 			LocalDateTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
@@ -49,6 +62,7 @@ public class Maquina implements Serializable {
 		this.horarioFechamentoOperacao = horarioFechamentoOperacao;
 		this.capacidadeOperacao = capacidadeOperacao;
 		this.nivelPerigo = nivelPericulosidade;
+		normas = new ArrayList<>();
 	}
 
 	public Maquina(String nome, String tipo, String descricao, String capacidadeOperacao, String nivelPericulosidade) {
@@ -58,6 +72,7 @@ public class Maquina implements Serializable {
 		this.descricao = descricao;
 		this.capacidadeOperacao = capacidadeOperacao;
 		this.nivelPerigo = nivelPericulosidade;
+		normas = new ArrayList<>();
 	}
 
 	public LocalDateTime getHorarioInicioOperacao() {
@@ -122,6 +137,18 @@ public class Maquina implements Serializable {
 
 	public void setNivelPericulosidade(String nivelPericulosidade) {
 		this.nivelPerigo = nivelPericulosidade;
+	}
+	
+	public List<Norma> getNormas() {
+		return normas;
+	}
+	
+	public boolean inserirNorma(Norma norma) {
+		return normas.add(norma);
+	}
+	
+	public boolean removerNorma(Norma norma) {
+		return normas.remove(norma);
 	}
 
 }
