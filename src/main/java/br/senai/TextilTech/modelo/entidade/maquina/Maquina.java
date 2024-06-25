@@ -16,6 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import br.senai.TextilTech.modelo.entidade.norma.Norma;
+import br.senai.TextilTech.modelo.entidade.usuario.funcionario.Funcionario;
 
 public class Maquina implements Serializable {
 
