@@ -12,7 +12,7 @@ import br.senai.TextilTech.modelo.entidade.funcao.Funcao;
 import br.senai.TextilTech.modelo.entidade.norma.Norma_;
 import br.senai.TextilTech.modelo.factory.conexao.ConexaoFactory;
 
-public class FuncaoDAOImpl {
+public class FuncaoDAOImpl implements FuncaoDAO{
 	
 	private ConexaoFactory fabrica;
 

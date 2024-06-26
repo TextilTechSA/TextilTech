@@ -12,7 +12,7 @@ public interface FuncaoDAO {
 
 	void atualizarFuncao(Funcao funcao);
 
-	List<Funcao> buscarNormasPorNome(String nome);
+	List<Funcao> buscarFuncoesPorNome(String nome);
 
-	Funcao buscarNormaPorId(Long id);
+	Funcao buscarFuncaoPorId(Long id);
 }
