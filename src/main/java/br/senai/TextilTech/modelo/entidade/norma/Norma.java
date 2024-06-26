@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "norma")
-public abstract class Norma implements Serializable {
+public class Norma implements Serializable {
 
 	private static final long serialVersionUID = -7244330435651934315L;
 

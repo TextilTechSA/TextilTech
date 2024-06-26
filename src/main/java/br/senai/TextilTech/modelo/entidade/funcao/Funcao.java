@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "funcao")
-public abstract class Funcao implements Serializable {
+public class Funcao implements Serializable {
 
 	private static final long serialVersionUID = -5452463382901111082L;
 
@@ -32,7 +32,6 @@ public abstract class Funcao implements Serializable {
 	}
 
 	public Funcao(String descricao) {
-		super();
 		this.descricao = descricao;
 	}
 

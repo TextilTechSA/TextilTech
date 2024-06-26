@@ -66,7 +66,7 @@ public class Maquina implements Serializable {
 	}
 
 	public Maquina(String nome, String tipo, String descricao, String capacidadeOperacao, String nivelPericulosidade) {
-		super();
+		
 		this.nome = nome;
 		this.tipo = tipo;
 		this.descricao = descricao;
