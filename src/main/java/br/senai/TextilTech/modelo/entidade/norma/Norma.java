@@ -24,22 +24,27 @@ public abstract class Norma implements Serializable {
 	@Column(name = "id_usuario")
 	private Long id;
 
-	@Column(name = "desc_maquina", length = 65, nullable = false)
+	@Column(name = "tipo_norma", length = 65, nullable = false)
 	private String tipo;
-
+	
+	@Column(name = "desc_norma", length = 65, nullable = false)
 	private String descricao;
 
+	@Column(name = "data_abertura_norma", nullable = false)
 	private LocalDate dataAberturaNorma;
 
+	@Column(name = "data_edicao_norma", nullable = false)
 	private LocalDate dataEdicaoNorma;
 
+	@Column(name = "data_revisao_norma", nullable = false)
 	private LocalDate dataRevisaoNorma;
 
+	@Column(name = "homologacao_norma", length = 65, nullable = false)
 	private String homologacao;
 
 	public Norma(Long id, String tipo, String descricao, LocalDate dataAberturaNorma, LocalDate dataEdicaoNorma,
 			LocalDate dataRevisaoNorma, String homologacao) {
-		super();
+
 		this.id = id;
 		this.tipo = tipo;
 		this.descricao = descricao;
@@ -51,7 +56,7 @@ public abstract class Norma implements Serializable {
 
 	public Norma(String tipo, String descricao, LocalDate dataAberturaNorma, LocalDate dataEdicaoNorma,
 			LocalDate dataRevisaoNorma, String homologacao) {
-		super();
+
 		this.tipo = tipo;
 		this.descricao = descricao;
 		this.dataAberturaNorma = dataAberturaNorma;

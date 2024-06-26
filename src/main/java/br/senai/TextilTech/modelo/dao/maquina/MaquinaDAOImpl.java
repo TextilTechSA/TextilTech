@@ -9,6 +9,7 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 
 import br.senai.TextilTech.modelo.entidade.maquina.Maquina;
+import br.senai.TextilTech.modelo.entidade.maquina.Maquina_;
 import br.senai.TextilTech.modelo.factory.conexao.ConexaoFactory;
 
 public class MaquinaDAOImpl implements MaquinaDAO{
