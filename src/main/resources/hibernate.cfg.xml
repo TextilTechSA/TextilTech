@@ -10,8 +10,10 @@
 		<property name="hibernate.connection.password"></property>
 		<property name="show_sql">true</property>
 		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
-		
-		<mapping class="br.senac.eco2you.modelo.entidade.endereco.Endereco" />
-		<mapping class="br.senac.eco2you.modelo.entidade.usuario.Usuario" />
+
+		<mapping
+			class="br.senac.eco2you.modelo.entidade.endereco.Endereco" />
+		<mapping
+			class="br.senac.eco2you.modelo.entidade.usuario.Usuario" />
 	</session-factory>
 </hibernate-configuration>
