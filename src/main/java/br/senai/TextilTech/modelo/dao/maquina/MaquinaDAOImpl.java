@@ -9,10 +9,9 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 
 import br.senai.TextilTech.modelo.entidade.maquina.Maquina;
-import br.senai.TextilTech.modelo.entidade.maquina.Maquina_;
 import br.senai.TextilTech.modelo.factory.conexao.ConexaoFactory;
 
-public class MaquinaDAOImpl implements MaquinaDAO{
+public class MaquinaDAOImpl implements MaquinaDAO {
 	
 	private ConexaoFactory fabrica;
 
@@ -108,6 +107,7 @@ public class MaquinaDAOImpl implements MaquinaDAO{
 		Session sessao = null;
 		List<Maquina> maquinas = null;
 
+			
 		try {
 			sessao = fabrica.getConexao().openSession();
 			sessao.beginTransaction();
@@ -118,8 +118,8 @@ public class MaquinaDAOImpl implements MaquinaDAO{
 
 			criteria.select(raizMaquina).where(construtor.like(raizMaquina.get("nome"), "%" + nome + "%"));
 
-			maquinas = sessao.createQuery(criteria).getResultList();
-
+		maquinas = sessao.createQuery(criteria).getResultList();
+			
 			sessao.getTransaction().commit();
 
 		} catch (Exception sqlException) {
@@ -138,40 +138,11 @@ public class MaquinaDAOImpl implements MaquinaDAO{
 
 	}
 
+	@Override
 	public Maquina buscarMaquinaPorId(Long id) {
-
-		Session sessao = null;
-		Maquina Maquina = null;
-
-		try {
-			sessao = fabrica.getConexao().openSession();
-			sessao.beginTransaction();
-
-			CriteriaBuilder construtor = sessao.getCriteriaBuilder();
-			CriteriaQuery<Maquina> criteria = construtor.createQuery(Maquina.class);
-			Root<Maquina> raizMaquina = criteria.from(Maquina.class);
-			
-			criteria.select(raizMaquina).where(construtor.equal(raizMaquina.get(Maquina_.ID), id));
-
-			Maquina = sessao.createQuery(criteria).getSingleResult();
-
-			sessao.getTransaction().commit();
-
-		} catch (Exception sqlException) {
-			sqlException.printStackTrace();
-
-			if (sessao.getTransaction() != null) {
-				sessao.getTransaction().rollback();
-			}
-
-		} finally {
-			if (sessao != null) {
-				sessao.close();
-			}
-		}
-
-		return Maquina;
-
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 
 }
