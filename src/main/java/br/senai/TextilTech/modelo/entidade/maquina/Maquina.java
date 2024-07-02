@@ -19,7 +19,7 @@ import br.senai.TextilTech.modelo.entidade.norma.Norma;
 
 public class Maquina implements Serializable {
 
-	private static final long serialVersionUID = 6253238070568300304L;
+	private static final long serialVersionUID = -375882083330625024L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,11 +65,13 @@ public class Maquina implements Serializable {
 		normas = new ArrayList<>();
 	}
 
-	public Maquina(String nome, String tipo, String descricao, String capacidadeOperacao, String nivelPericulosidade) {
+	public Maquina(String nome, String tipo, String descricao, LocalDateTime horarioInicioOperacao,  LocalDateTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
 		
 		this.nome = nome;
 		this.tipo = tipo;
 		this.descricao = descricao;
+		this.horarioInicioOperacao = horarioInicioOperacao;
+		this.horarioFechamentoOperacao = horarioFechamentoOperacao;
 		this.capacidadeOperacao = capacidadeOperacao;
 		this.nivelPerigo = nivelPericulosidade;
 		normas = new ArrayList<>();
