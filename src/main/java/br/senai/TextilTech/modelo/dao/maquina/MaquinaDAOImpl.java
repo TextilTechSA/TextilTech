@@ -9,6 +9,7 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 
 import br.senai.TextilTech.modelo.entidade.maquina.Maquina;
+import br.senai.TextilTech.modelo.entidade.maquina.Maquina_;
 import br.senai.TextilTech.modelo.factory.conexao.ConexaoFactory;
 
 public class MaquinaDAOImpl implements MaquinaDAO {
@@ -151,7 +152,7 @@ public class MaquinaDAOImpl implements MaquinaDAO {
 	        CriteriaQuery<Maquina> criteria = construtor.createQuery(Maquina.class);
 	        Root<Maquina> raizMaquina = criteria.from(Maquina.class);
 
-	        criteria.select(raizMaquina).where(construtor.equal(raizMaquina.get("id"), id));
+	        criteria.select(raizMaquina).where(construtor.equal(raizMaquina.get(Maquina_.ID), id));
 
 	        maquina = sessao.createQuery(criteria).getSingleResult();
 

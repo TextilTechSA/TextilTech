@@ -7,19 +7,26 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import br.senai.TextilTech.modelo.entidade.norma.Norma;
 
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "maquina")
 public class Maquina implements Serializable {
 
-	private static final long serialVersionUID = -375882083330625024L;
+	private static final long serialVersionUID = 9067404675648538358L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -76,6 +83,38 @@ public class Maquina implements Serializable {
 		this.nivelPerigo = nivelPericulosidade;
 		normas = new ArrayList<>();
 	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
 	public LocalDateTime getHorarioInicioOperacao() {
 		return horarioInicioOperacao;
@@ -101,46 +140,18 @@ public class Maquina implements Serializable {
 		this.capacidadeOperacao = capacidadeOperacao;
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNivelPericulosidade() {
+	public String getNivelPerigo() {
 		return nivelPerigo;
 	}
 
-	public void setNivelPericulosidade(String nivelPericulosidade) {
-		this.nivelPerigo = nivelPericulosidade;
+	public void setNivelPerigo(String nivelPerigo) {
+		this.nivelPerigo = nivelPerigo;
 	}
-	
+
+	public void setNormas(List<Norma> normas) {
+		this.normas = normas;
+	}
+
 	public List<Norma> getNormas() {
 		return normas;
 	}
