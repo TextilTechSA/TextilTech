@@ -138,11 +138,39 @@ public class MaquinaDAOImpl implements MaquinaDAO {
 
 	}
 
-	@Override
 	public Maquina buscarMaquinaPorId(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
+	    Session sessao = null;
+	    Maquina maquina = null;
+
+	    try {
+	        sessao = fabrica.getConexao().openSession();
+	        sessao.beginTransaction();
+
+	        CriteriaBuilder construtor = sessao.getCriteriaBuilder();
+	        CriteriaQuery<Maquina> criteria = construtor.createQuery(Maquina.class);
+	        Root<Maquina> raizMaquina = criteria.from(Maquina.class);
+
+	        criteria.select(raizMaquina).where(construtor.equal(raizMaquina.get("id"), id));
+
+	        maquina = sessao.createQuery(criteria).getSingleResult();
+
+	        sessao.getTransaction().commit();
+
+	    } catch (Exception sqlException) {
+	        sqlException.printStackTrace();
+
+	        if (sessao.getTransaction() != null) {
+	            sessao.getTransaction().rollback();
+	        }
+
+	    } finally {
+	        if (sessao != null) {
+	            sessao.close();
+	        }
+	    }
+
+	    return maquina;
+	}
 
 }
