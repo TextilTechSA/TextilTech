@@ -33,10 +33,10 @@ public class Norma implements Serializable {
 	@Column(name = "data_abertura_norma", nullable = false)
 	private LocalDate dataAberturaNorma;
 
-	@Column(name = "data_edicao_norma", nullable = false)
+	@Column(name = "data_edicao_norma", nullable = true)
 	private LocalDate dataEdicaoNorma;
 
-	@Column(name = "data_revisao_norma", nullable = false)
+	@Column(name = "data_revisao_norma", nullable = true)
 	private LocalDate dataRevisaoNorma;
 
 	@Column(name = "homologacao_norma", length = 65, nullable = false)
@@ -62,6 +62,14 @@ public class Norma implements Serializable {
 		this.dataAberturaNorma = dataAberturaNorma;
 		this.dataEdicaoNorma = dataEdicaoNorma;
 		this.dataRevisaoNorma = dataRevisaoNorma;
+		this.homologacao = homologacao;
+	}
+	
+	public Norma(String tipo, String descricao, LocalDate dataAberturaNorma, String homologacao) {
+
+		this.tipo = tipo;
+		this.descricao = descricao;
+		this.dataAberturaNorma = dataAberturaNorma;
 		this.homologacao = homologacao;
 	}
 
