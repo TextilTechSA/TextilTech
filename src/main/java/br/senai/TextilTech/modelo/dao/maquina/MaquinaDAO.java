@@ -15,5 +15,7 @@ public interface MaquinaDAO {
 	List<Maquina> buscarMaquinasPorNome(String nome);
 	
 	Maquina buscarMaquinaPorId(Long id);
+	
+	public List<Maquina> buscarMaquinas();
 
 }
