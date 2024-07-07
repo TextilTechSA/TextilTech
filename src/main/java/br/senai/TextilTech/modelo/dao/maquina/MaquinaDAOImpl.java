@@ -173,5 +173,44 @@ public class MaquinaDAOImpl implements MaquinaDAO {
 
 	    return maquina;
 	}
+	
+	public List<Maquina> buscarMaquinas() {
+
+		Session sessao = null;
+		List<Maquina> maquinas = null;
+
+		try {
+
+			sessao = fabrica.getConexao().openSession();
+			sessao.beginTransaction();
+
+			CriteriaBuilder construtor = sessao.getCriteriaBuilder();
+
+			CriteriaQuery<Maquina> criteria = construtor.createQuery(Maquina.class);
+			Root<Maquina> raizMaquina = criteria.from(Maquina.class);
+
+			criteria.select(raizMaquina);
+
+			maquinas = sessao.createQuery(criteria).getResultList();
+
+			sessao.getTransaction().commit();
+
+		} catch (Exception sqlException) {
+
+			sqlException.printStackTrace();
+
+			if (sessao.getTransaction() != null) {
+				sessao.getTransaction().rollback();
+			}
+
+		} finally {
+
+			if (sessao != null) {
+				sessao.close();
+			}
+		}
+
+		return maquinas;
+	}
 
 }

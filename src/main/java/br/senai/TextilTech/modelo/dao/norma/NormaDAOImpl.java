@@ -173,5 +173,43 @@ public class NormaDAOImpl implements NormaDAO {
 		return norma;
 
 	}
+	
+	public List<Norma> buscarNormas() {
 
+		Session sessao = null;
+		List<Norma> normas = null;
+
+		try {
+
+			sessao = fabrica.getConexao().openSession();
+			sessao.beginTransaction();
+
+			CriteriaBuilder construtor = sessao.getCriteriaBuilder();
+
+			CriteriaQuery<Norma> criteria = construtor.createQuery(Norma.class);
+			Root<Norma> raizNorma = criteria.from(Norma.class);
+
+			criteria.select(raizNorma);
+
+			normas = sessao.createQuery(criteria).getResultList();
+
+			sessao.getTransaction().commit();
+
+		} catch (Exception sqlException) {
+
+			sqlException.printStackTrace();
+
+			if (sessao.getTransaction() != null) {
+				sessao.getTransaction().rollback();
+			}
+
+		} finally {
+
+			if (sessao != null) {
+				sessao.close();
+			}
+		}
+
+		return normas;
+	}
 }

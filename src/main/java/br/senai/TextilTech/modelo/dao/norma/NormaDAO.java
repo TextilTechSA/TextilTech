@@ -15,5 +15,7 @@ public interface NormaDAO {
 	List<Norma> buscarNormasPorNome(String nome);
 	
 	Norma buscarNormaPorId(Long id);
+	
+	public List<Norma> buscarNormas();
 
 }

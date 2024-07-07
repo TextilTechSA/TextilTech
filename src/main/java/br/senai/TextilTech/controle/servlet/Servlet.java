@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -61,12 +62,28 @@ public class Servlet extends HttpServlet {
 
 			switch (action) {
 
-			case "/landing-page":
-				mostrarLandingPage(request, response);
+			case "/home":
+				mostrarHome(request, response);
 				break;
 				
 			case "/cadastro-norma":
 				mostrarCadastroNorma(request, response);
+				break;
+				
+			case "/cadastro-maquina":
+				mostrarCadastroMaquina(request, response);
+				break;
+				
+			case "/cadastro-funcionario":
+				mostrarCadastroFuncionario(request, response);
+				break;
+				
+			case "/maquinas":
+				mostrarMaquinas(request, response);
+				break;
+				
+			case "/normas":
+				mostrarNormas(request, response);
 				break;
 
 			case "/login":
@@ -84,6 +101,11 @@ public class Servlet extends HttpServlet {
 			case "/inserir-funcionario":
 				inserirFuncionario(request, response);
 				break;
+				
+
+			case "/inserir-funcao":
+				inserirFuncao(request, response);
+				break;
 
 			case "/inserir-norma":
 				inserirNorma(request, response);
@@ -94,7 +116,7 @@ public class Servlet extends HttpServlet {
 				break;
 
 			default:
-				mostrarLandingPage(request, response);
+				mostrarHome(request, response);
 				break;
 			}
 
@@ -102,6 +124,13 @@ public class Servlet extends HttpServlet {
 			throw new ServletException(ex);
 		}
 
+	}
+	
+	private void mostrarHome(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/landing-page.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	private void mostrarLogin(HttpServletRequest request, HttpServletResponse response)
@@ -117,11 +146,38 @@ public class Servlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-norma.jsp");
 		dispatcher.forward(request, response);
 	}
-
-	private void mostrarLandingPage(HttpServletRequest request, HttpServletResponse response)
+	
+	private void mostrarCadastroMaquina(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/landing-page.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
+		dispatcher.forward(request, response);
+	}
+	
+	private void mostrarCadastroFuncionario(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
+		dispatcher.forward(request, response);
+	}
+	
+	private void mostrarMaquinas(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		List<Maquina> maquinas = maquinaDAO.buscarMaquinas();
+		request.setAttribute("maquinas", maquinas);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
+		dispatcher.forward(request, response);
+	}
+	
+	private void mostrarNormas(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		List<Norma> normas = normaDAO.buscarNormas();
+		request.setAttribute("normas", normas);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
 		dispatcher.forward(request, response);
 	}
 
