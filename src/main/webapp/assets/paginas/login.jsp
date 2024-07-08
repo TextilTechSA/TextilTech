@@ -14,8 +14,7 @@
 
 </head>
 <body>
-	<a href="landing-page"><svg><%@ include
-				file="../images/voltar.jsp"%></svg></a>
+	<a href="landing-page"></a>
 	<div class="container-login">
 		<form action="logar" method="post">
 			<span>Login</span>
