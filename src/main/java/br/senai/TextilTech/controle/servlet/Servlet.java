@@ -129,7 +129,7 @@ public class Servlet extends HttpServlet {
 	private void mostrarHome(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/landing-page.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/home.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -150,7 +150,7 @@ public class Servlet extends HttpServlet {
 	private void mostrarCadastroMaquina(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-maquina.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -167,7 +167,7 @@ public class Servlet extends HttpServlet {
 		List<Maquina> maquinas = maquinaDAO.buscarMaquinas();
 		request.setAttribute("maquinas", maquinas);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/visualizar-maquinas.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -177,7 +177,7 @@ public class Servlet extends HttpServlet {
 		List<Norma> normas = normaDAO.buscarNormas();
 		request.setAttribute("normas", normas);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/visualizar-normas.jsp");
 		dispatcher.forward(request, response);
 	}
 
