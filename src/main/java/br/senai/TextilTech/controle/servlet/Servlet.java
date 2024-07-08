@@ -100,8 +100,7 @@ public class Servlet extends HttpServlet {
 
 			case "/inserir-funcionario":
 				inserirFuncionario(request, response);
-				break;
-				
+				break;		
 
 			case "/inserir-funcao":
 				inserirFuncao(request, response);
@@ -245,7 +244,7 @@ public class Servlet extends HttpServlet {
 		normaDAO.inserirNorma(
 				new Norma(tipo, descricao, dataAberturaNorma, dataEdicaoNorma, dataRevisaoNorma, homologacao));
 
-		response.sendRedirect("landing-page");
+		response.sendRedirect("home");
 
 	}
 
@@ -263,7 +262,7 @@ public class Servlet extends HttpServlet {
 		maquinaDAO.inserirMaquina(new Maquina(nome, tipo, descricao, horarioInicioOperacao, horarioFechamentoOperacao,
 				capacidadeOperacao, nivelPerigo));
 
-		response.sendRedirect("");
+		response.sendRedirect("home");
 
 	}
 	

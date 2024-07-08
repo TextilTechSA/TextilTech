@@ -25,7 +25,7 @@
     <aside id="default-sidebar"
     class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:translate-x-0 bg-white">
     <div class="overflow-y-auto py-5 px-3 h-full border-r border-white">
-        <a href="textiltech-index.html"
+        <a href="home"
            class="flex items-center uppercase tracking-estatium p-0 text-2xl text-blazeOrange group">
             <img src="img/LogoTextil.png" alt="Favicon" class="h-16 w-16 mr-20">
             <span class="ml-0 font-extrabold">Textil Tech</span>
@@ -95,15 +95,15 @@
                     <form id="add-machine-form" action="inserir-maquina">
                         <div class="mb-4">
                             <label for="machine-name" class="block text-sm font-medium text-gray-700">Nome da Máquina</label>
-                            <input type="text" id="machine-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                            <input type="text" id="machine-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="nome">
                         </div>
                         <div class="mb-4">
                             <label for="machine-code" class="block text-sm font-medium text-gray-700">Descricao da Máquina</label>
-                            <input type="text" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                            <input type="text" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="descricao">
                         </div>
                         <div class="mb-4">
                             <label for="machine-danger" class="block text-sm font-medium text-gray-700">Nivel de Periculosidade</label>
-                            <select id="machine-danger" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                            <select id="machine-danger" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="nivelPerigo">
                                 <option value="">Selecione o tipo</option>
                                 <option value="baixo">Baixo</option>
                                 <option value="medio">Médio</option>
@@ -112,12 +112,24 @@
                         </div>
                         <div class="mb-4">
                             <label for="machine-type" class="block text-sm font-medium text-gray-700">Tipo da Maquina</label>
-                            <select id="machine-type" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                            <select id="machine-type" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="tipo">
                                 <option value="">Selecione o tipo</option>
                                 <option value="tecelagem">Tecelagem</option>
                                 <option value="costura">Costura</option>
                                 <option value="corte">Corte</option>
                             </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="machine-code" class="block text-sm font-medium text-gray-700">Horário de Início da Operação</label>
+                            <input type="time" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="horarioInicioOperacao">
+                        </div>
+                        <div class="mb-4">
+                            <label for="machine-code" class="block text-sm font-medium text-gray-700">Horário de Fechamento da Operação</label>
+                            <input type="time" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="horarioFechamentoOperacao">
+                        </div>
+                        <div class="mb-4">
+                            <label for="machine-code" class="block text-sm font-medium text-gray-700">Horário de Início da Operação</label>
+                            <input type="text" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="capacidadeOperacao">
                         </div>
                         <div class="flex justify-end">
                             <button type="submit" class="bg-blazeOrange text-white py-2 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blazeOrange focus:ring-opacity-50">
@@ -133,7 +145,7 @@
     <script>
         document.getElementById('add-machine-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            window.location.href = 'textiltech-visualizarMaquinas.html';
+            window.location.href = 'home';
         });
     </script>
 </body>
