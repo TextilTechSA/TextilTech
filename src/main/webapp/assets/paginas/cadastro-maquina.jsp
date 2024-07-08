@@ -88,31 +88,17 @@
     </div>
 </aside>
     <div class="lg:ml-64">
-        <main class="pt-20 pb-16">
             <div class="p-4">
                 <h1 class="text-3xl font-semibold text-blazeOrange">Adicionar Máquina</h1>
                 <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
                     <form id="add-machine-form" action="inserir-maquina">
                         <div class="mb-4">
                             <label for="machine-name" class="block text-sm font-medium text-gray-700">Nome da Máquina</label>
-                            <input type="text" id="machine-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="nome">
+                            <input type="text" id="machine-name" required name="nome" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" >
                         </div>
-                        <div class="mb-4">
-                            <label for="machine-code" class="block text-sm font-medium text-gray-700">Descricao da Máquina</label>
-                            <input type="text" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="descricao">
-                        </div>
-                        <div class="mb-4">
-                            <label for="machine-danger" class="block text-sm font-medium text-gray-700">Nivel de Periculosidade</label>
-                            <select id="machine-danger" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="nivelPerigo">
-                                <option value="">Selecione o tipo</option>
-                                <option value="baixo">Baixo</option>
-                                <option value="medio">Médio</option>
-                                <option value="alto">Alto</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
+                         <div class="mb-4">
                             <label for="machine-type" class="block text-sm font-medium text-gray-700">Tipo da Maquina</label>
-                            <select id="machine-type" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="tipo">
+                            <select id="machine-type" name="tipo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
                                 <option value="">Selecione o tipo</option>
                                 <option value="tecelagem">Tecelagem</option>
                                 <option value="costura">Costura</option>
@@ -120,34 +106,37 @@
                             </select>
                         </div>
                         <div class="mb-4">
+                            <label for="machine-code" class="block text-sm font-medium text-gray-700">Descricao da Máquina</label>
+                            <input type="text" id="machine-code" name="descricao" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                        </div>
+                        <div class="mb-4">
                             <label for="machine-code" class="block text-sm font-medium text-gray-700">Horário de Início da Operação</label>
-                            <input type="time" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="horarioInicioOperacao">
+                            <input type="time" id="machine-code"  name="horarioInicioOperacao" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="horarioInicioOperacao">
                         </div>
                         <div class="mb-4">
                             <label for="machine-code" class="block text-sm font-medium text-gray-700">Horário de Fechamento da Operação</label>
-                            <input type="time" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="horarioFechamentoOperacao">
+                            <input type="time" id="machine-code" name="horarioFechamentoOperacao" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
                         </div>
                         <div class="mb-4">
-                            <label for="machine-code" class="block text-sm font-medium text-gray-700">Horário de Início da Operação</label>
-                            <input type="text" id="machine-code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required name="capacidadeOperacao">
+                            <label for="machine-code" class="block text-sm font-medium text-gray-700">Capacidade Operação</label>
+                            <input type="text" id="machine-code" name="capacidadeOperacao" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="machine-danger" class="block text-sm font-medium text-gray-700">Nivel de Periculosidade</label>
+                            <select id="machine-danger" name="nivelPerigo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="baixo">Baixo</option>
+                                <option value="medio">Médio</option>
+                                <option value="alto">Alto</option>
+                            </select>
                         </div>
                         <div class="flex justify-end">
-                            <button type="submit" class="bg-blazeOrange text-white py-2 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blazeOrange focus:ring-opacity-50">
-                                Adicionar Máquina
-                            </button>
+                           <input type="submit" class="bg-blazeOrange text-white py-2 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blazeOrange focus:ring-opacity-50" value="Adicionar">
                         </div>
                     </form>
                 </div>
-            </div>
-        </main>
+            </div> 
     </div>
-
-    <script>
-        document.getElementById('add-machine-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            window.location.href = 'home';
-        });
-    </script>
 </body>
 
 </html>

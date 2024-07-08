@@ -1,7 +1,7 @@
 package br.senai.TextilTech.modelo.entidade.maquina;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,10 +43,10 @@ public class Maquina implements Serializable {
 	private String descricao;
 
 	@Column(name = "horario_inicio_operacao", length = 65, nullable = true)
-	private LocalDateTime horarioInicioOperacao;
+	private LocalTime horarioInicioOperacao;
 
 	@Column(name = "horario_fechamento_operacao", length = 65, nullable = true)
-	private LocalDateTime horarioFechamentoOperacao;
+	private LocalTime horarioFechamentoOperacao;
 
 	@Column(name = "capacidade_operacao", length = 65, nullable = true)
 	private String capacidadeOperacao;
@@ -58,8 +58,8 @@ public class Maquina implements Serializable {
 	@JoinTable(name = "maquina_has_norma", joinColumns = @JoinColumn(name = "id_maquina"), inverseJoinColumns = @JoinColumn(name = "id_norma"))
 	List<Norma> normas;
 
-	public Maquina(Long id, String nome, String tipo, String descricao, LocalDateTime horarioInicioOperacao,
-			LocalDateTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
+	public Maquina(Long id, String nome, String tipo, String descricao, LocalTime horarioInicioOperacao,
+			LocalTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
 	
 		this.id = id;
 		this.nome = nome;
@@ -72,7 +72,7 @@ public class Maquina implements Serializable {
 		normas = new ArrayList<>();
 	}
 
-	public Maquina(String nome, String tipo, String descricao, LocalDateTime horarioInicioOperacao,  LocalDateTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
+	public Maquina(String nome, String tipo, String descricao, LocalTime horarioInicioOperacao,  LocalTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
 		
 		this.nome = nome;
 		this.tipo = tipo;
@@ -116,19 +116,19 @@ public class Maquina implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public LocalDateTime getHorarioInicioOperacao() {
+	public LocalTime getHorarioInicioOperacao() {
 		return horarioInicioOperacao;
 	}
 
-	public void setHorarioInicioOperacao(LocalDateTime horarioInicioOperacao) {
+	public void setHorarioInicioOperacao(LocalTime horarioInicioOperacao) {
 		this.horarioInicioOperacao = horarioInicioOperacao;
 	}
 
-	public LocalDateTime getHorarioFechamentoOperacao() {
+	public LocalTime getHorarioFechamentoOperacao() {
 		return horarioFechamentoOperacao;
 	}
 
-	public void setHorarioFechamentoOperacao(LocalDateTime horarioFechamentoOperacao) {
+	public void setHorarioFechamentoOperacao(LocalTime horarioFechamentoOperacao) {
 		this.horarioFechamentoOperacao = horarioFechamentoOperacao;
 	}
 
