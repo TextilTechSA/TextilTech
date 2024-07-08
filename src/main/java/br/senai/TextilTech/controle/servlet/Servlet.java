@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -33,6 +35,8 @@ import br.senai.TextilTech.modelo.entidade.usuario.funcionario.Funcionario;
 public class Servlet extends HttpServlet {
 
 	private static final long serialVersionUID = 4085698799982778747L;
+	
+	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 
 	private UsuarioDAO usuarioDAO;
 	private FuncaoDAO funcaoDAO;
@@ -249,22 +253,26 @@ public class Servlet extends HttpServlet {
 	}
 
 	private void inserirMaquina(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException {
+            throws SQLException, IOException, ServletException {
 
-		String nome = request.getParameter("nome");
-		String tipo = request.getParameter("tipo");
-		String descricao = request.getParameter("descricao");
-		LocalDateTime horarioInicioOperacao = LocalDateTime.parse(request.getParameter("horarioInicioOperacao"));
-		LocalDateTime horarioFechamentoOperacao = LocalDateTime.parse(request.getParameter("horarioFechamentoOperacao"));
-		String capacidadeOperacao = request.getParameter("capacidadeOperacao");
-		String nivelPerigo = request.getParameter("nivelPerigo");
+        String nome = request.getParameter("nome");
+        String tipo = request.getParameter("tipo");
+        String descricao = request.getParameter("descricao");
 
-		maquinaDAO.inserirMaquina(new Maquina(nome, tipo, descricao, horarioInicioOperacao, horarioFechamentoOperacao,
-				capacidadeOperacao, nivelPerigo));
+        // Parse para LocalDateTime
+        LocalTime horarioInicioOperacao = LocalTime.parse(request.getParameter("horarioInicioOperacao"), formatter);
+        LocalTime horarioFechamentoOperacao = LocalTime.parse(request.getParameter("horarioFechamentoOperacao"), formatter);
 
-		response.sendRedirect("home");
+        String capacidadeOperacao = request.getParameter("capacidadeOperacao");
+        String nivelPerigo = request.getParameter("nivelPerigo");
 
-	}
+        // Aqui você cria a instância do DAO e insere no banco de dados
+        MaquinaDAO maquinaDAO = new MaquinaDAOImpl();
+        maquinaDAO.inserirMaquina(new Maquina(nome, tipo, descricao, horarioInicioOperacao, horarioFechamentoOperacao,
+                capacidadeOperacao, nivelPerigo));
+
+        response.sendRedirect("home");
+    }
 	
 	private void inserirFuncao(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
