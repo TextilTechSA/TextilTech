@@ -229,7 +229,7 @@
                             <img class="w-64 rounded-lg sm:rounded-none sm:rounded-l-lg" src="img/estatium-mick.png" alt="Back-end">
                             <div class="p-5">
                                 <h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
-                                    Eduardo Hessmann
+                                    Eduardo Hessmann Rohleder
                                 </h3>
                                 <span class="text-blazeOrange">Back-end</span>
                                 <p class="mt-3 mb-4 font-light text-nickel">Eduardo lidera o desenvolvimento back-end e gerencia a infraestrutura técnica da TextilTech.</p>
