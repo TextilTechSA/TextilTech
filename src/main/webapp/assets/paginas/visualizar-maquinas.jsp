@@ -41,11 +41,6 @@
 								<th>Nome</th>
 								<th>Tipo</th>
 								<th>Descrição</th>
-								<th>funcionamento</th>
-								<th>Horário Início Operação</th>
-								<th>Horário Fechamento Operação</th>
-								<th>Capacidade Operação</th>
-								<th>Nível Perigo</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -54,11 +49,7 @@
 									<td>${maquina.nome}</td>
 									<td>${maquina.tipo}</td>
 									<td>${maquina.descricao}</td>
-									<td>${maquina.funcionamento}</td>
-									<td>${maquina.horarioInicioOperacao}</td>
-									<td>${maquina.horarioFechamentoOperacao}</td>
-									<td>${maquina.capacidadeOperacao}</td>
-									<td>${maquina.nivelPerigo}</td>
+									<td><a href="perfil-maquina?id=<c:out value='${maquina.id}'/>">Deposite</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
