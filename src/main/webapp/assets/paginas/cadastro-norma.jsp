@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 
@@ -83,46 +84,19 @@
 				<h1 class="text-3xl font-semibold text-blazeOrange">Adicionar
 					Norma</h1>
 				<div class="mt-6 bg-white p-6 rounded-lg shadow-md">
-					<form id="add-norm-form">
+					<form id="add-norm-form" action="inserir-norma">
+
 						<div class="mb-4">
-							<label for="norm-id"
-								class="block text-sm font-medium text-gray-700">ID da
-								Norma</label> <input type="number" id="norm-id"
+							<label for="norm-type"
+								class="block text-sm font-medium text-gray-700">Nome da
+								Norma</label> <input type="text" id="norm-type" name="nome" 
 								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
 								required>
 						</div>
 						<div class="mb-4">
 							<label for="norm-type"
 								class="block text-sm font-medium text-gray-700">Tipo de
-								Norma</label> <input type="text" id="norm-type"
-								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
-								required>
-						</div>
-						<div class="mb-4">
-							<label for="norm-open-date"
-								class="block text-sm font-medium text-gray-700">Data de
-								Abertura</label> <input type="date" id="norm-open-date"
-								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
-								required>
-						</div>
-						<div class="mb-4">
-							<label for="norm-edit-date"
-								class="block text-sm font-medium text-gray-700">Data de
-								Edição</label> <input type="date" id="norm-edit-date"
-								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
-								required>
-						</div>
-						<div class="mb-4">
-							<label for="norm-revision-date"
-								class="block text-sm font-medium text-gray-700">Data de
-								Revisão</label> <input type="date" id="norm-revision-date"
-								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
-								required>
-						</div>
-						<div class="mb-4">
-							<label for="norm-homologation"
-								class="block text-sm font-medium text-gray-700">Homologação
-								da Norma</label> <input type="text" id="norm-homologation"
+								Norma</label> <input type="text" id="norm-type" name="tipo"
 								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
 								required>
 						</div>
@@ -130,9 +104,19 @@
 							<label for="norm-description"
 								class="block text-sm font-medium text-gray-700">Descrição
 								da Norma</label>
-							<textarea id="norm-description"
+							<textarea id="norm-description" name="descricao"
 								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
 								rows="4" required></textarea>
+						</div>
+						<div class="mb-4">
+							<label for="norm-homologation"
+								class="block text-sm font-medium text-gray-700">Homologação
+								da Norma</label> 
+								<select id="norm-homologation" name="homologacao" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="ativa">Norma Ativa</option>
+                                <option value="inativa">Norma Inativa</option>
+                            </select>
 						</div>
 						<div class="flex justify-end">
 							<button type="submit"
@@ -145,14 +129,6 @@
 		</main>
 	</div>
 
-	<script>
-		document.getElementById('add-norm-form').addEventListener('submit',
-				function(event) {
-					event.preventDefault();
-					
-					window.location.href = 'textiltech-visualizarNormas.html';
-				});
-	</script>
 </body>
 
 </html>

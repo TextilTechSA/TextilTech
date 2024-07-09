@@ -35,7 +35,7 @@ import br.senai.TextilTech.modelo.entidade.usuario.funcionario.Funcionario;
 public class Servlet extends HttpServlet {
 
 	private static final long serialVersionUID = 4085698799982778747L;
-	
+
 	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 
 	private UsuarioDAO usuarioDAO;
@@ -69,23 +69,23 @@ public class Servlet extends HttpServlet {
 			case "/home":
 				mostrarHome(request, response);
 				break;
-				
+
 			case "/cadastro-norma":
 				mostrarCadastroNorma(request, response);
 				break;
-				
+
 			case "/cadastro-maquina":
 				mostrarCadastroMaquina(request, response);
 				break;
-				
+
 			case "/cadastro-funcionario":
 				mostrarCadastroFuncionario(request, response);
 				break;
-				
+
 			case "/maquinas":
 				mostrarMaquinas(request, response);
 				break;
-				
+
 			case "/normas":
 				mostrarNormas(request, response);
 				break;
@@ -104,7 +104,7 @@ public class Servlet extends HttpServlet {
 
 			case "/inserir-funcionario":
 				inserirFuncionario(request, response);
-				break;		
+				break;
 
 			case "/inserir-funcao":
 				inserirFuncao(request, response);
@@ -113,7 +113,7 @@ public class Servlet extends HttpServlet {
 			case "/inserir-norma":
 				inserirNorma(request, response);
 				break;
-				
+
 			case "/inserir-maquina":
 				inserirMaquina(request, response);
 				break;
@@ -128,7 +128,7 @@ public class Servlet extends HttpServlet {
 		}
 
 	}
-	
+
 	private void mostrarHome(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
@@ -142,41 +142,41 @@ public class Servlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/login.jsp");
 		dispatcher.forward(request, response);
 	}
-	
+
 	private void mostrarCadastroNorma(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-norma.jsp");
 		dispatcher.forward(request, response);
 	}
-	
+
 	private void mostrarCadastroMaquina(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-maquina.jsp");
 		dispatcher.forward(request, response);
 	}
-	
+
 	private void mostrarCadastroFuncionario(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
 		dispatcher.forward(request, response);
 	}
-	
+
 	private void mostrarMaquinas(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		
+
 		List<Maquina> maquinas = maquinaDAO.buscarMaquinas();
 		request.setAttribute("maquinas", maquinas);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/visualizar-maquinas.jsp");
 		dispatcher.forward(request, response);
 	}
-	
+
 	private void mostrarNormas(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		
+
 		List<Norma> normas = normaDAO.buscarNormas();
 		request.setAttribute("normas", normas);
 
@@ -218,7 +218,7 @@ public class Servlet extends HttpServlet {
 		response.sendRedirect("");
 
 	}
-	
+
 //	private void atualizarFuncionario(HttpServletRequest request, HttpServletResponse response)
 //			throws SQLException, IOException, ServletException {
 //
@@ -238,47 +238,49 @@ public class Servlet extends HttpServlet {
 	private void inserirNorma(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
+		String nome = request.getParameter("nome");
 		String tipo = request.getParameter("tipo");
 		String descricao = request.getParameter("descricao");
-		LocalDate dataAberturaNorma = LocalDate.parse(request.getParameter("dataAberturaNorma"));
-		LocalDate dataEdicaoNorma = LocalDate.parse(request.getParameter("dataEdicaoNorma"));
-		LocalDate dataRevisaoNorma = LocalDate.parse(request.getParameter("dataRevisaoNorma"));
 		String homologacao = request.getParameter("homologacao");
+		LocalDate dataAberturaNorma = LocalDate.now();
 
 		normaDAO.inserirNorma(
-				new Norma(tipo, descricao, dataAberturaNorma, dataEdicaoNorma, dataRevisaoNorma, homologacao));
+				new Norma(nome, tipo, descricao, dataAberturaNorma, homologacao));
 
-		response.sendRedirect("home");
+		response.sendRedirect("normas");
 
 	}
 
 	private void inserirMaquina(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException, ServletException {
+			throws SQLException, IOException, ServletException {
 
-        String nome = request.getParameter("nome");
-        String tipo = request.getParameter("tipo");
-        String descricao = request.getParameter("descricao");
+		String nome = request.getParameter("nome");
+		String tipo = request.getParameter("tipo");
+		String descricao = request.getParameter("descricao");
 
-        // Parse para LocalDateTime
-        LocalTime horarioInicioOperacao = LocalTime.parse(request.getParameter("horarioInicioOperacao"), formatter);
-        LocalTime horarioFechamentoOperacao = LocalTime.parse(request.getParameter("horarioFechamentoOperacao"), formatter);
+		// Formato de tempo esperado
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
-        String capacidadeOperacao = request.getParameter("capacidadeOperacao");
-        String nivelPerigo = request.getParameter("nivelPerigo");
+		// Parse para LocalTime 
+		LocalTime horarioInicioOperacao = LocalTime.parse(request.getParameter("horarioInicioOperacao"), formatter);
+		LocalTime horarioFechamentoOperacao = LocalTime.parse(request.getParameter("horarioFechamentoOperacao"),
+				formatter);
 
-        // Aqui você cria a instância do DAO e insere no banco de dados
-        MaquinaDAO maquinaDAO = new MaquinaDAOImpl();
-        maquinaDAO.inserirMaquina(new Maquina(nome, tipo, descricao, horarioInicioOperacao, horarioFechamentoOperacao,
-                capacidadeOperacao, nivelPerigo));
+		String capacidadeOperacao = request.getParameter("capacidadeOperacao");
+		String nivelPerigo = request.getParameter("nivelPerigo");
 
-        response.sendRedirect("home");
-    }
-	
+		// insere no banco de dados
+		maquinaDAO.inserirMaquina(new Maquina(nome, tipo, descricao, horarioInicioOperacao, horarioFechamentoOperacao,
+				capacidadeOperacao, nivelPerigo));
+
+		response.sendRedirect("maquinas");
+	}
+
 	private void inserirFuncao(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
 		String descricao = request.getParameter("descricao");
-		
+
 		funcaoDAO.inserirFuncao(new Funcao(descricao));
 
 		response.sendRedirect("");
