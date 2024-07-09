@@ -163,7 +163,7 @@ public class Servlet extends HttpServlet {
 		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id")));
 		request.setAttribute("maquina", maquina);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-norma.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/perfil-maquina.jsp");
 		dispatcher.forward(request, response);
 	}
 
