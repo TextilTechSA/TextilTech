@@ -75,7 +75,7 @@ public class Maquina implements Serializable {
 		this.horarioFechamentoOperacao = horarioFechamentoOperacao;
 		this.capacidadeOperacao = capacidadeOperacao;
 		this.nivelPerigo = nivelPericulosidade;
-		normas = new ArrayList<>();
+		normas = new ArrayList<Norma>();
 	}
 
 	public Maquina(String nome, String tipo, String descricao, String funcionamento, LocalTime horarioInicioOperacao,  LocalTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
@@ -88,7 +88,7 @@ public class Maquina implements Serializable {
 		this.horarioFechamentoOperacao = horarioFechamentoOperacao;
 		this.capacidadeOperacao = capacidadeOperacao;
 		this.nivelPerigo = nivelPericulosidade;
-		normas = new ArrayList<>();
+		normas = new ArrayList<Norma>();
 	}
 	
 	public Long getId() {
@@ -171,9 +171,12 @@ public class Maquina implements Serializable {
 		return normas;
 	}
 	
-	public boolean inserirNorma(Norma norma) {
-		return normas.add(norma);
-	}
+	public void inserirNorma(Norma norma) {
+        if (normas == null) {
+            normas = new ArrayList<>();
+        }
+        normas.add(norma);
+    }
 	
 	public boolean removerNorma(Norma norma) {
 		return normas.remove(norma);

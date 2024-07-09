@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
@@ -151,6 +152,9 @@ public class MaquinaDAOImpl implements MaquinaDAO {
 	        CriteriaBuilder construtor = sessao.getCriteriaBuilder();
 	        CriteriaQuery<Maquina> criteria = construtor.createQuery(Maquina.class);
 	        Root<Maquina> raizMaquina = criteria.from(Maquina.class);
+
+	        // Adiciona o join fetch para a coleção de normas
+	        raizMaquina.fetch("normas", JoinType.LEFT);
 
 	        criteria.select(raizMaquina).where(construtor.equal(raizMaquina.get(Maquina_.ID), id));
 

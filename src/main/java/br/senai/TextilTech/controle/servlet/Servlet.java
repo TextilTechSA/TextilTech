@@ -121,6 +121,10 @@ public class Servlet extends HttpServlet {
 			case "/inserir-maquina":
 				inserirMaquina(request, response);
 				break;
+				
+			case "/resultado-pesquisa-maquina":
+				mostrarResultadoPesquisaMaquina(request, response);
+				break;
 
 			default:
 				mostrarHome(request, response);
@@ -200,6 +204,16 @@ public class Servlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/visualizar-normas.jsp");
 		dispatcher.forward(request, response);
 	}
+	
+	private void mostrarResultadoPesquisaMaquina(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		List<Maquina> maquinas = maquinaDAO.buscarMaquinasPorNome(request.getParameter("nome"));
+		request.setAttribute("maquinas", maquinas);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/resultado-busca-maquinas.jsp");
+		dispatcher.forward(request, response);
+	}
 
 	private void logar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
@@ -265,9 +279,11 @@ public class Servlet extends HttpServlet {
 		
 		normaDAO.inserirNorma(norma);
 		
-		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id")));
+		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id_maquina")));
 		
 		maquina.inserirNorma(norma);
+		
+		maquinaDAO.atualizarMaquina(maquina);
 
 		response.sendRedirect("normas");
 
