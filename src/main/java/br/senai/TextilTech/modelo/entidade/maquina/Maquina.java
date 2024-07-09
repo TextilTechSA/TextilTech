@@ -57,6 +57,8 @@ public class Maquina implements Serializable {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "maquina_has_norma", joinColumns = @JoinColumn(name = "id_maquina"), inverseJoinColumns = @JoinColumn(name = "id_norma"))
 	List<Norma> normas;
+	
+	public Maquina() {}
 
 	public Maquina(Long id, String nome, String tipo, String descricao, LocalTime horarioInicioOperacao,
 			LocalTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {

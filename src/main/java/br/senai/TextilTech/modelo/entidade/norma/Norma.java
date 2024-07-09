@@ -23,6 +23,9 @@ public class Norma implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_usuario")
 	private Long id;
+	
+	@Column(name = "nome_norma", length = 65, nullable = false)
+	private String nome;
 
 	@Column(name = "tipo_norma", length = 65, nullable = false)
 	private String tipo;
@@ -31,45 +34,50 @@ public class Norma implements Serializable {
 	private String descricao;
 
 	@Column(name = "data_abertura_norma", nullable = false)
-	private LocalDate dataAberturaNorma;
+	private LocalDate dataAbertura;
 
 	@Column(name = "data_edicao_norma", nullable = true)
-	private LocalDate dataEdicaoNorma;
+	private LocalDate dataEdicao;
 
 	@Column(name = "data_revisao_norma", nullable = true)
-	private LocalDate dataRevisaoNorma;
+	private LocalDate dataRevisao;
 
 	@Column(name = "homologacao_norma", length = 65, nullable = false)
 	private String homologacao;
+	
+	public Norma() {}
 
-	public Norma(Long id, String tipo, String descricao, LocalDate dataAberturaNorma, LocalDate dataEdicaoNorma,
+	public Norma(Long id, String nome, String tipo, String descricao, LocalDate dataAberturaNorma, LocalDate dataEdicaoNorma,
 			LocalDate dataRevisaoNorma, String homologacao) {
 
 		this.id = id;
+		this.nome = nome;
 		this.tipo = tipo;
 		this.descricao = descricao;
-		this.dataAberturaNorma = dataAberturaNorma;
-		this.dataEdicaoNorma = dataEdicaoNorma;
-		this.dataRevisaoNorma = dataRevisaoNorma;
+		this.dataAbertura = dataAberturaNorma;
+		this.dataEdicao = dataEdicaoNorma;
+		this.dataRevisao = dataRevisaoNorma;
 		this.homologacao = homologacao;
 	}
 
-	public Norma(String tipo, String descricao, LocalDate dataAberturaNorma, LocalDate dataEdicaoNorma,
+	public Norma(String nome, String tipo, String descricao, LocalDate dataAberturaNorma, LocalDate dataEdicaoNorma,
 			LocalDate dataRevisaoNorma, String homologacao) {
 
+		this.nome = nome;
 		this.tipo = tipo;
 		this.descricao = descricao;
-		this.dataAberturaNorma = dataAberturaNorma;
-		this.dataEdicaoNorma = dataEdicaoNorma;
-		this.dataRevisaoNorma = dataRevisaoNorma;
+		this.dataAbertura = dataAberturaNorma;
+		this.dataEdicao = dataEdicaoNorma;
+		this.dataRevisao = dataRevisaoNorma;
 		this.homologacao = homologacao;
 	}
 	
-	public Norma(String tipo, String descricao, LocalDate dataAberturaNorma, String homologacao) {
+	public Norma(String nome, String tipo, String descricao, LocalDate dataAberturaNorma, String homologacao) {
 
+		this.nome = nome;
 		this.tipo = tipo;
 		this.descricao = descricao;
-		this.dataAberturaNorma = dataAberturaNorma;
+		this.dataAbertura = dataAberturaNorma;
 		this.homologacao = homologacao;
 	}
 
@@ -79,6 +87,14 @@ public class Norma implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getTipo() {
@@ -98,27 +114,27 @@ public class Norma implements Serializable {
 	}
 
 	public LocalDate getDataAberturaNorma() {
-		return dataAberturaNorma;
+		return dataAbertura;
 	}
 
 	public void setDataAberturaNorma(LocalDate dataAberturaNorma) {
-		this.dataAberturaNorma = dataAberturaNorma;
+		this.dataAbertura = dataAberturaNorma;
 	}
 
 	public LocalDate getDataEdicaoNorma() {
-		return dataEdicaoNorma;
+		return dataEdicao;
 	}
 
 	public void setDataEdicaoNorma(LocalDate dataEdicaoNorma) {
-		this.dataEdicaoNorma = dataEdicaoNorma;
+		this.dataEdicao = dataEdicaoNorma;
 	}
 
 	public LocalDate getDataRevisaoNorma() {
-		return dataRevisaoNorma;
+		return dataRevisao;
 	}
 
 	public void setDataRevisaoNorma(LocalDate dataRevisaoNorma) {
-		this.dataRevisaoNorma = dataRevisaoNorma;
+		this.dataRevisao = dataRevisaoNorma;
 	}
 
 	public String getHomologacao() {
