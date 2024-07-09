@@ -30,7 +30,8 @@
 						<div class="mb-4">
 							<label for="norm-type"
 								class="block text-sm font-medium text-gray-700">Escolha Maquina
-							</label> <select id="norm-homologation" name="maquina"
+							</label> 
+							<select id="norm-homologation" name="id_maquina"
 								class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blazeOrange focus:border-blazeOrange sm:text-sm"
 								required>
 								<option value="">Selecione a Maquina</option>

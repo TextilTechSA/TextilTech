@@ -1341,4 +1341,57 @@ video {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+  
+  .machine-details, .normas-table {
+        width: 50%;
+        float: left;
+    }
+    .machine-details h4, .machine-details span {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .normas-table {
+        margin-left: 20px;
+    }
+    .normas-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .normas-table th, .normas-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+    .normas-table th {
+        background-color: #f4f4f4;
+    }
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .machine-details {
+        width: 45%;
+    }
+    .normas-table {
+        width: 45%;
+        margin-left: 10px; /* Espaço entre os elementos */
+    }
+    .normas-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .normas-table th, .normas-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+    .normas-table th {
+        background-color: #f4f4f4;
+    }
+    .content-wrapper {
+    background-color: white; /* Garante que o fundo seja branco */
+    padding: 20px; /* Adiciona um espaçamento interno ao redor do conteúdo */
+    border-radius: 8px; /* Opcional: adiciona bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: adiciona sombra */
+}
 }
