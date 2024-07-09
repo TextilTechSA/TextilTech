@@ -41,6 +41,9 @@ public class Maquina implements Serializable {
 
 	@Column(name = "desc_maquina", length = 65, nullable = false)
 	private String descricao;
+	
+	@Column(name = "funcionamento_maquina", length = 65, nullable = false)
+	private String funcionamento;
 
 	@Column(name = "horario_inicio_operacao", length = 65, nullable = true)
 	private LocalTime horarioInicioOperacao;
@@ -60,13 +63,14 @@ public class Maquina implements Serializable {
 	
 	public Maquina() {}
 
-	public Maquina(Long id, String nome, String tipo, String descricao, LocalTime horarioInicioOperacao,
+	public Maquina(Long id, String nome, String tipo, String descricao, String funcionamento, LocalTime horarioInicioOperacao,
 			LocalTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
 	
 		this.id = id;
 		this.nome = nome;
 		this.tipo = tipo;
 		this.descricao = descricao;
+		this.funcionamento = funcionamento;
 		this.horarioInicioOperacao = horarioInicioOperacao;
 		this.horarioFechamentoOperacao = horarioFechamentoOperacao;
 		this.capacidadeOperacao = capacidadeOperacao;
@@ -74,11 +78,12 @@ public class Maquina implements Serializable {
 		normas = new ArrayList<>();
 	}
 
-	public Maquina(String nome, String tipo, String descricao, LocalTime horarioInicioOperacao,  LocalTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
+	public Maquina(String nome, String tipo, String descricao, String funcionamento, LocalTime horarioInicioOperacao,  LocalTime horarioFechamentoOperacao, String capacidadeOperacao, String nivelPericulosidade) {
 		
 		this.nome = nome;
 		this.tipo = tipo;
 		this.descricao = descricao;
+		this.funcionamento = funcionamento;
 		this.horarioInicioOperacao = horarioInicioOperacao;
 		this.horarioFechamentoOperacao = horarioFechamentoOperacao;
 		this.capacidadeOperacao = capacidadeOperacao;
@@ -116,6 +121,14 @@ public class Maquina implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public String getFuncionamento() {
+		return funcionamento;
+	}
+
+	public void setFuncionamento(String funcionamento) {
+		this.funcionamento = funcionamento;
 	}
 
 	public LocalTime getHorarioInicioOperacao() {

@@ -85,6 +85,10 @@ public class Servlet extends HttpServlet {
 			case "/maquinas":
 				mostrarMaquinas(request, response);
 				break;
+				
+			case "/perfil-maquina":
+				mostrarPerfilMaquina(request, response);
+				break;
 
 			case "/normas":
 				mostrarNormas(request, response);
@@ -145,6 +149,19 @@ public class Servlet extends HttpServlet {
 
 	private void mostrarCadastroNorma(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
+		
+		List<Maquina> maquinas = maquinaDAO.buscarMaquinas();
+		request.setAttribute("maquinas", maquinas);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-norma.jsp");
+		dispatcher.forward(request, response);
+	}
+	
+	private void mostrarPerfilMaquina(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id")));
+		request.setAttribute("maquina", maquina);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-norma.jsp");
 		dispatcher.forward(request, response);
@@ -244,8 +261,13 @@ public class Servlet extends HttpServlet {
 		String homologacao = request.getParameter("homologacao");
 		LocalDate dataAberturaNorma = LocalDate.now();
 
-		normaDAO.inserirNorma(
-				new Norma(nome, tipo, descricao, dataAberturaNorma, homologacao));
+		Norma norma = new Norma(nome, tipo, descricao, dataAberturaNorma, homologacao);
+		
+		normaDAO.inserirNorma(norma);
+		
+		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id")));
+		
+		maquina.inserirNorma(norma);
 
 		response.sendRedirect("normas");
 
@@ -257,6 +279,7 @@ public class Servlet extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String tipo = request.getParameter("tipo");
 		String descricao = request.getParameter("descricao");
+		String funcionamento = request.getParameter("funcionamento");
 
 		// Formato de tempo esperado
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
@@ -270,7 +293,7 @@ public class Servlet extends HttpServlet {
 		String nivelPerigo = request.getParameter("nivelPerigo");
 
 		// insere no banco de dados
-		maquinaDAO.inserirMaquina(new Maquina(nome, tipo, descricao, horarioInicioOperacao, horarioFechamentoOperacao,
+		maquinaDAO.inserirMaquina(new Maquina(nome, tipo, descricao, funcionamento, horarioInicioOperacao, horarioFechamentoOperacao,
 				capacidadeOperacao, nivelPerigo));
 
 		response.sendRedirect("maquinas");
