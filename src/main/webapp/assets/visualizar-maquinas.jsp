@@ -19,7 +19,7 @@
 
 <body class="flex flex-col min-h-screen bg-orchidBlossom font-poppins">
 
-	<%@include file="../../../assets/paginas/menu.jsp"%>
+	<%@include file="../../../assets/menu.jsp"%>
 	
 	<div class="lg:ml-64">
 			<div class="p-4">
@@ -28,7 +28,7 @@
 				<div class="mt-6 bg-white p-6 rounded-lg shadow-md">
 				
 					<!-- Barra de pesquisa -->
-					<%@include file="../../../assets/paginas/barra-pesquisa-maquina.jsp"%>
+					<%@include file="../../../assets/barra-pesquisa-maquina.jsp"%>
 					
 					<table class="w-full text-center mt-4">
 						<thead>

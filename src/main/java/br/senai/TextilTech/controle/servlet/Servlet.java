@@ -69,6 +69,10 @@ public class Servlet extends HttpServlet {
 			case "/home":
 				mostrarHome(request, response);
 				break;
+				
+			case "/home2":
+				mostrarHome2(request, response);
+				break;
 
 			case "/cadastro-norma":
 				mostrarCadastroNorma(request, response);
@@ -140,14 +144,21 @@ public class Servlet extends HttpServlet {
 	private void mostrarHome(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/home.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/home.jsp");
+		dispatcher.forward(request, response);
+	}
+	
+	private void mostrarHome2(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/home2.html");
 		dispatcher.forward(request, response);
 	}
 
 	private void mostrarLogin(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/login.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/login.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -157,7 +168,7 @@ public class Servlet extends HttpServlet {
 		List<Maquina> maquinas = maquinaDAO.buscarMaquinas();
 		request.setAttribute("maquinas", maquinas);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-norma.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/cadastro-norma.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -167,21 +178,21 @@ public class Servlet extends HttpServlet {
 		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id")));
 		request.setAttribute("maquina", maquina);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/perfil-maquina.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/perfil-maquina.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private void mostrarCadastroMaquina(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/cadastro-maquina.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/cadastro-maquina.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private void mostrarCadastroFuncionario(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/");
 		dispatcher.forward(request, response);
 	}
 
@@ -191,7 +202,7 @@ public class Servlet extends HttpServlet {
 		List<Maquina> maquinas = maquinaDAO.buscarMaquinas();
 		request.setAttribute("maquinas", maquinas);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/visualizar-maquinas.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/visualizar-maquinas.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -201,7 +212,7 @@ public class Servlet extends HttpServlet {
 		List<Norma> normas = normaDAO.buscarNormas();
 		request.setAttribute("normas", normas);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/visualizar-normas.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/visualizar-normas.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -211,7 +222,7 @@ public class Servlet extends HttpServlet {
 		List<Maquina> maquinas = maquinaDAO.buscarMaquinasPorNome(request.getParameter("nome"));
 		request.setAttribute("maquinas", maquinas);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/paginas/resultado-busca-maquinas.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/resultado-busca-maquinas.jsp");
 		dispatcher.forward(request, response);
 	}
 
