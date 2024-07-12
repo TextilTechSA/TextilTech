@@ -15,7 +15,7 @@
 </head>
 <body class="flex flex-col min-h-screen bg-orchidBlossom font-poppins">
 
-    <%@include file="../../../assets/paginas/menu.jsp"%>
+    <%@include file="../../../assets/menu.jsp"%>
 
     <div class="lg:ml-64">
         <div class="p-4">
