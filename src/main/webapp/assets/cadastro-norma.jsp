@@ -22,7 +22,7 @@
 	<div class="lg:ml-64">
 		<main class="pt-20 pb-16">
 			<div class="p-4">
-				<h1 class="text-3xl font-semibold text-blazeOrange">Adicionar
+				<h1 class="text-4xl font-bold text-blazeOrange">Adicionar
 					Norma</h1>
 				<div class="mt-6 bg-white p-6 rounded-lg shadow-md">
 					<form id="add-norm-form" action="inserir-norma">
@@ -80,7 +80,7 @@
 						</div>
 						<div class="flex justify-end">
 							<button type="submit"
-								class="bg-blazeOrange text-white py-2 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blazeOrange focus:ring-opacity-50">
+								class="action-button">
 								Adicionar Norma</button>
 						</div>
 					</form>

@@ -19,40 +19,64 @@
 
     <div class="lg:ml-64">
         <div class="p-4">
-            <h1 class="text-4xl font-bold text-blazeOrange">Máquina: ${maquina.nome}</h1>
+            <h1 class="text-4xl font-bold text-blazeOrange">${maquina.nome}</h1>
             
-            <div class="content-wrapper">
-                <div class="machine-details">
-                    <h4>Nome da Máquina:</h4> <span>${maquina.nome}</span>
-                    <h4>Tipo da Máquina:</h4> <span>${maquina.tipo}</span>
-                    <h4>Descrição:</h4> <span>${maquina.descricao}</span>
-                    <h4>Funcionamento:</h4> <span>${maquina.funcionamento}</span>
-                    <h4>Horário de Início de Operação:</h4> <span>${maquina.horarioInicioOperacao}</span>
-                    <h4>Horário de Fechamento de Operação:</h4> <span>${maquina.horarioFechamentoOperacao}</span>
-                    <h4>Capacidade de Operação:</h4> <span>${maquina.capacidadeOperacao}</span>
-                    <h4>Nível de Perigo:</h4> <span>${maquina.nivelPerigo}</span>
+            <div class="content-wrapper mt-6">
+                <div class="machine-details grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Nome da Máquina:</h4>
+                        <span>${maquina.nome}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Tipo da Máquina:</h4>
+                        <span>${maquina.tipo}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Descrição:</h4>
+                        <span>${maquina.descricao}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Funcionamento:</h4>
+                        <span>${maquina.funcionamento}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Horário de Início de Operação:</h4>
+                        <span>${maquina.horarioInicioOperacao}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Horário de Fechamento de Operação:</h4>
+                        <span>${maquina.horarioFechamentoOperacao}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Capacidade de Operação:</h4>
+                        <span>${maquina.capacidadeOperacao}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <h4 class="font-semibold mr-2">Nível de Perigo:</h4>
+                        <span>${maquina.nivelPerigo}</span>
+                    </div>
                 </div>
                 
-                <div class="normas-table">
-                    <h4>Normas</h4>
-                    <table>
+                <div class="normas-table mt-6">
+                    <h4 class="text-2xl font-bold mb-4">Normas</h4>
+                    <table class="table-auto w-full bg-white shadow-md rounded-lg">
                         <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Tipo</th>
-                                <th>Descrição</th>
-                                <th>Data de Abertura</th>
-                                <th>Homologação</th>
+                            <tr class="bg-gray-200">
+                                <th class="px-4 py-2">Nome</th>
+                                <th class="px-4 py-2">Tipo</th>
+                                <th class="px-4 py-2">Descrição</th>
+                                <th class="px-4 py-2">Data de Abertura</th>
+                                <th class="px-4 py-2">Homologação</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="norma" items="${maquina.normas}">
                                 <tr>
-                                    <td>${norma.nome}</td>
-                                    <td>${norma.tipo}</td>
-                                    <td>${norma.descricao}</td>
-                                    <td>${norma.dataAberturaNorma}</td>
-                                    <td>${norma.homologacao}</td>
+                                    <td class="border px-4 py-2">${norma.nome}</td>
+                                    <td class="border px-4 py-2">${norma.tipo}</td>
+                                    <td class="border px-4 py-2">${norma.descricao}</td>
+                                    <td class="border px-4 py-2">${norma.dataAberturaNorma}</td>
+                                    <td class="border px-4 py-2">${norma.homologacao}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>

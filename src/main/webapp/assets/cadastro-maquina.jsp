@@ -18,7 +18,7 @@
     
     <div class="lg:ml-64">
             <div class="p-4">
-                <h1 class="text-3xl font-semibold text-blazeOrange">Adicionar Máquina</h1>
+                <h1 class="text-4xl font-bold text-blazeOrange">Adicionar Máquina</h1>
                 <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
                     <form id="add-machine-form" action="inserir-maquina">
                         <div class="mb-4">
@@ -64,7 +64,7 @@
                             </select>
                         </div>
                         <div class="flex justify-end">
-                           <input type="submit" class="bg-blazeOrange text-white py-2 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blazeOrange focus:ring-opacity-50" value="Adicionar">
+                           <input type="submit" class="action-button" value="Adicionar">
                         </div>
                     </form>
                 </div>
