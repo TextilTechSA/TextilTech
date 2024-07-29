@@ -1,7 +1,6 @@
 package br.senai.TextilTech.controle.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -15,9 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import br.senai.TextilTech.modelo.dao.funcao.FuncaoDAO;
 import br.senai.TextilTech.modelo.dao.funcao.FuncaoDAOImpl;
