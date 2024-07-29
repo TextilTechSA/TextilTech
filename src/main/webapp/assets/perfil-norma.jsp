@@ -86,7 +86,7 @@
         <div class="p-4">
             <div class="header">
                 <h1 class="text-4xl font-bold">${norma.nome}</h1>
-                <a href="visualizarNormas.jsp" class="back-button">Voltar</a>
+                <a href="normas" class="back-button">Voltar</a>
             </div>
             
             <div class="content-wrapper mt-6">

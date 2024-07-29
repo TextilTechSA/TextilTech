@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 
@@ -20,47 +19,47 @@
 
     <div class="lg:ml-64">
         <div class="p-4">
-            <h1 class="text-4xl font-bold text-blazeOrange">Visualizar Normas</h1>
-            <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
-                <!-- Barra de pesquisa -->
-                <div class="search-bar-container">
-                    <form action="resultado-pesquisa-norma" method="GET" class="flex w-full max-w-lg">
-                        <input type="text" id="searchInput" name="nome" placeholder="Pesquisar normas..."
-                            class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blazeOrange focus:border-blazeOrange flex-grow">
-                        <button type="submit"
-                            class="ml-2 px-4 py-2 bg-blazeOrange text-white rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blazeOrange focus:ring-opacity-50">
-                            Pesquisar
-                        </button>
-                    </form>
-                </div>
-                <table class="w-full text-center mt-4 table-auto bg-white shadow-md rounded-lg">
-                    <thead>
-                        <tr class="bg-gray-200">
-                            <th class="px-4 py-2">Nome</th>
-                            <th class="px-4 py-2">Tipo</th>
-                            <th class="px-4 py-2">Descrição</th>
-                            <th class="px-4 py-2">Data de Abertura</th>
-                            <th class="px-4 py-2">Homologação</th>
-                            <th class="px-4 py-2">Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="norma" items="${normas}">
-                            <tr>
-                                <td class="border px-4 py-2">${norma.nome}</td>
-                                <td class="border px-4 py-2">${norma.tipo}</td>
-                                <td class="border px-4 py-2">${norma.descricao}</td>
-                                <td class="border px-4 py-2">${norma.dataAberturaNorma}</td>
-                                <td class="border px-4 py-2">${norma.homologacao}</td>
-                                <td class="border px-4 py-2">
-                                    <a href="perfil-norma?id=<c:out value='${norma.id}'/>"
-                                       class="action-button">Ver Norma</a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
+            <div class="header mb-6"> <!-- Adicionada margem inferior maior -->
+                <h1 class="text-4xl font-bold">Adicionar Norma</h1>
+                <a href="home" class="back-button">Voltar</a>
             </div>
+            <!-- Barra de pesquisa -->
+            <div class="search-bar-container mb-6"> <!-- Adicionada margem inferior -->
+                <form action="resultado-pesquisa-norma" method="GET" class="flex w-full max-w-lg">
+                    <input type="text" id="searchInput" name="nome" placeholder="Pesquisar normas..."
+                        class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blazeOrange focus:border-blazeOrange flex-grow">
+                    <button type="submit"
+                        class="ml-2 px-4 py-2 bg-blazeOrange text-white rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blazeOrange focus:ring-opacity-50">
+                        Pesquisar
+                    </button>
+                </form>
+            </div>
+            <table class="w-full text-center mt-4 table-auto bg-white shadow-md rounded-lg">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2">Nome</th>
+                        <th class="px-4 py-2">Tipo</th>
+                        <th class="px-4 py-2">Descrição</th>
+                        <th class="px-4 py-2">Data de Abertura</th>
+                        <th class="px-4 py-2">Homologação</th>
+                        <th class="px-4 py-2">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="norma" items="${normas}">
+                        <tr>
+                            <td class="border px-4 py-2">${norma.nome}</td>
+                            <td class="border px-4 py-2">${norma.tipo}</td>
+                            <td class="border px-4 py-2">${norma.descricao}</td>
+                            <td class="border px-4 py-2">${norma.dataAberturaNorma}</td>
+                            <td class="border px-4 py-2">${norma.homologacao}</td>
+                            <td class="border px-4 py-2">
+                                <a href="perfil-norma?id=<c:out value='${norma.id}'/>" class="action-button">Ver Norma</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
         </div>
     </div>
 

@@ -17,8 +17,11 @@
     <%@include file="../../../assets/menu.jsp"%>
     
     <div class="lg:ml-64">
-            <div class="p-4">
-                <h1 class="text-4xl font-bold text-blazeOrange">Adicionar Máquina</h1>
+        <div class="p-4">
+            <div class="header">
+                <h1 class="text-4xl font-bold">Adicionar Máquina</h1>
+                <a href="home" class="back-button">Voltar</a>
+            </div>
                 <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
                     <form id="add-machine-form" action="inserir-maquina">
                         <div class="mb-4">

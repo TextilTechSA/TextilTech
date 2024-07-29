@@ -18,39 +18,40 @@
     
     <div class="lg:ml-64">
         <div class="p-4">
-            <h1 class="text-4xl font-bold text-blazeOrange">Visualizar Máquinas</h1>
-            <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
-                <!-- Barra de pesquisa -->
-                <div class="search-bar-container">
-                    <form action="resultado-pesquisa-maquina" method="GET" class="flex w-full">
-                        <input type="text" id="searchInput" placeholder="Pesquisar máquinas..." name="nome">
-                        <button type="submit">Pesquisar</button>
-                    </form>
-                </div>
-
-                <table class="w-full text-center mt-4 table-auto bg-white shadow-md rounded-lg">
-                    <thead>
-                        <tr class="bg-gray-200">
-                            <th class="px-4 py-2">Nome</th>
-                            <th class="px-4 py-2">Tipo</th>
-                            <th class="px-4 py-2">Descrição</th>
-                            <th class="px-4 py-2">Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="maquina" items="${maquinas}">
-                            <tr>
-                                <td class="border px-4 py-2">${maquina.nome}</td>
-                                <td class="border px-4 py-2">${maquina.tipo}</td>
-                                <td class="border px-4 py-2">${maquina.descricao}</td>
-                                <td class="border px-4 py-2">
-                                    <a href="perfil-maquina?id=<c:out value='${maquina.id}'/>" class="action-button">Ver Máquina</a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
+            <div class="header mb-6"> <!-- Adicionada margem inferior maior -->
+                <h1 class="text-4xl font-bold">Visualizar Máquinas</h1>
+                <a href="home" class="back-button">Voltar</a>
             </div>
+            <!-- Barra de pesquisa -->
+            <div class="search-bar-container mb-6"> <!-- Adicionada margem inferior -->
+                <form action="resultado-pesquisa-maquina" method="GET" class="flex w-full">
+                    <input type="text" id="searchInput" placeholder="Pesquisar máquinas..." name="nome">
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+
+            <table class="w-full text-center mt-4 table-auto bg-white shadow-md rounded-lg">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2">Nome</th>
+                        <th class="px-4 py-2">Tipo</th>
+                        <th class="px-4 py-2">Descrição</th>
+                        <th class="px-4 py-2">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="maquina" items="${maquinas}">
+                        <tr>
+                            <td class="border px-4 py-2">${maquina.nome}</td>
+                            <td class="border px-4 py-2">${maquina.tipo}</td>
+                            <td class="border px-4 py-2">${maquina.descricao}</td>
+                            <td class="border px-4 py-2">
+                                <a href="perfil-maquina?id=<c:out value='${maquina.id}'/>" class="action-button">Ver Máquina</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

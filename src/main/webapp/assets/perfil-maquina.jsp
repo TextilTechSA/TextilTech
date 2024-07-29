@@ -11,72 +11,9 @@
 <link rel="icon" href="img/LogoTextil.png" type="image/x-icon" sizes="16x16">
 
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<style>
-    /* Estilos personalizados */
-    .content-wrapper {
-        background: linear-gradient(to bottom, #e0f2fe, #ffffff);
-        padding: 2rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        margin-top: 2rem;
-    }
-    .machine-details h4 {
-        color: #1f2937; /* Cor do texto: cinza-900 */
-        margin-right: 1rem;
-        background-color: #e0f7fa; /* Fundo azul claro */
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
-        font-size: 1.125rem;
-    }
-    .machine-details span {
-        color: #4b5563; /* Cor do texto: cinza-700 */
-        font-size: 1.125rem;
-    }
-    .machine-details div {
-        border-bottom: 1px solid #e5e7eb; /* Cor da borda: cinza-200 */
-        padding: 1rem;
-        margin-bottom: 1rem;
-        transition: background-color 0.3s ease;
-        display: flex;
-        align-items: center;
-        border-radius: 0.375rem;
-        background-color: #ffffff;
-    }
-    .machine-details div:hover {
-        background-color: #f0fdf4; /* Cor do fundo ao passar o mouse: verde-50 */
-    }
-    .header {
-        background: linear-gradient(to right, #133A59, #133A59); /* Gradiente azul escuro */
-        padding: 1rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .header h1 {
-        color: #ffffff; /* Cor do texto: branco */
-        font-size: 2rem;
-    }
-    .back-button {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background-color: #1d4ed8; /* Cor de fundo: azul-700 */
-        color: #ffffff;
-        border-radius: 0.375rem;
-        transition: background-color 0.3s ease;
-        text-decoration: none;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .back-button:hover {
-        background-color: #2563eb; /* Cor de fundo ao passar o mouse: azul-600 */
-    }
-    .icon {
-        margin-right: 0.5rem;
-        color: #1d4ed8; /* Cor do ícone: azul-700 */
-        font-size: 1.5rem;
-    }
-</style>
+
+<style><%@include file="../../../assets/css/textilTech.css"%></style>
+
 </head>
 <body class="flex flex-col min-h-screen bg-orchidBlossom font-poppins">
 
@@ -86,7 +23,7 @@
         <div class="p-4">
             <div class="header">
                 <h1 class="text-4xl font-bold">${maquina.nome}</h1>
-                <a href="visualizarMaquinas.jsp" class="back-button">Voltar</a>
+                <a href="maquinas" class="back-button">Voltar</a>
             </div>
             
             <div class="content-wrapper mt-6">
