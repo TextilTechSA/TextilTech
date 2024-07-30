@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -10,9 +10,9 @@
 <title>Textil Tech | Tech Master</title>
 <link rel="icon" href="img/LogoTextil.png" type="image/x-icon"
 	sizes="16x16">
-<style>
-<%@include file="../../../assets/css/textilTech.css"%>
-</style>
+ 
+ <style><%@include file="../../../assets/css/textilTech.css"%></style>
+
 </head>
 
 <body class="flex flex-col min-h-screen bg-orchidBlossom font-poppins">
@@ -70,8 +70,7 @@
 					<div>
 						<div
 							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
-							<img class="w-6 h-6 lg:w-8 lg:h-8 invert"
-								src="img/estatium-html5.svg" alt="HTML">
+							<%@include file="../../../assets/img/HTML-img.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">HTML</h3>
 						<p class="text-nickel">HTML permite definir a estrutura básica
@@ -80,8 +79,7 @@
 					<div>
 						<div
 							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
-							<img class="w-6 h-6 lg:w-8 lg:h-8 invert"
-								src="img/estatium-css3.svg" alt="CSS">
+							<%@include file="../../../assets/img/CSS-img.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">CSS</h3>
 						<p class="text-nickel">CSS é usado para controlar o layout, as
@@ -90,19 +88,7 @@
 					<div>
 						<div
 							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
-							<img class="w-6 h-6 lg:w-8 lg:h-8 invert"
-								src="img/estatium-js.svg" alt="JavaScript">
-						</div>
-						<h3 class="mb-2 text-xl font-bold text-blazeOrange">JavaScript</h3>
-						<p class="text-nickel">JavaScript permite criar
-							funcionalidades avançadas, como animações, validações de
-							formulários e atualizações de conteúdo em tempo real.</p>
-					</div>
-					<div>
-						<div
-							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
-							<img class="w-6 h-6 lg:w-8 lg:h-8 invert"
-								src="img/estatium-java.svg" alt="Java">
+							<%@include file="../../../assets/img/Java.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">Java</h3>
 						<p class="text-nickel">Java é amplamente utilizado em
@@ -112,8 +98,7 @@
 					<div>
 						<div
 							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
-							<img class="w-6 h-6 lg:w-8 lg:h-8 invert"
-								src="img/estatium-sql.svg" alt="SQL">
+							<%@include file="../../../assets/img/SQL-SVG.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">SQL</h3>
 						<p class="text-nickel">SQL é essencial para consultas
@@ -123,8 +108,7 @@
 					<div>
 						<div
 							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
-							<img class="w-6 h-6 lg:w-8 lg:h-8 invert"
-								src="img/estatium-jsp.svg" alt="JSP">
+							<%@include file="../../../assets/img/JSP-SVG.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">JSP</h3>
 						<p class="text-nickel">JSP é uma forma de implementar o
@@ -197,7 +181,8 @@
 					</div>
 					<div
 						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange">
-						<img src="${pageContext.request.contextPath} eduardo_hessmann_rohleder.png"
+						<img
+							src="https://media.licdn.com/dms/image/D4D03AQHPogYqrvddIA/profile-displayphoto-shrink_200_200/0/1708396343398?e=2147483647&v=beta&t=wsOdnAqMwV1xJTndT0VEhnfnKiuB_zZe2jVYUpBHWAg"
 							alt="Minha Imagem PNG">
 						<div class="p-5">
 							<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
@@ -213,8 +198,6 @@
 
 				<div
 					class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange">
-					<img class="w-64 rounded-lg sm:rounded-none sm:rounded-l-lg"
-						src="img/estatium-kaht.png" alt="Banco de dados">
 					<div class="p-5">
 						<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
 							Gustavo Libório Estevão</h3>
@@ -237,20 +220,20 @@
 							tecnológicas avançadas que atendam às necessidades em constante
 							evolução da indústria têxtil;<br>
 						</li>
-						
+
 						<li>Qualidade: Foco incessante na entrega de produtos e
 							serviços que superem as expectativas dos clientes;<br>
 						</li>
-						
+
 						<li>Transparência: Manter uma comunicação clara e honesta com
 							nossos clientes, parceiros e colaboradores;<br>
 						</li>
-						
+
 						<li>Sustentabilidade: Promover práticas que minimizem o
 							impacto ambiental e contribuam para o desenvolvimento
 							sustentável;<br>
 						</li>
-					
+
 						<li>Excelência no Atendimento: Prover um suporte excepcional,
 							garantindo que nossos clientes obtenham o máximo benefício de
 							nossas soluções.</li>
