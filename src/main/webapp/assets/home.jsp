@@ -69,7 +69,7 @@
 					class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
 					<div>
 						<div
-							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
+							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeGray lg:h-12 lg:w-12">
 							<%@include file="../../../assets/img/HTML-img.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">HTML</h3>
@@ -78,7 +78,7 @@
 					</div>
 					<div>
 						<div
-							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
+							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeGray lg:h-12 lg:w-12">
 							<%@include file="../../../assets/img/CSS-img.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">CSS</h3>
@@ -87,7 +87,7 @@
 					</div>
 					<div>
 						<div
-							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
+							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeGray lg:h-12 lg:w-12">
 							<%@include file="../../../assets/img/Java.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">Java</h3>
@@ -97,7 +97,7 @@
 					</div>
 					<div>
 						<div
-							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
+							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeGray lg:h-12 lg:w-12">
 							<%@include file="../../../assets/img/SQL-SVG.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">SQL</h3>
@@ -107,7 +107,7 @@
 					</div>
 					<div>
 						<div
-							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeOrange lg:h-12 lg:w-12">
+							class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blazeGray lg:h-12 lg:w-12">
 							<%@include file="../../../assets/img/JSP-SVG.jsp"%>
 						</div>
 						<h3 class="mb-2 text-xl font-bold text-blazeOrange">JSP</h3>
@@ -143,8 +143,9 @@
 				<div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
 					<div
 						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange">
-						<img class="w-64 rounded-lg sm:rounded-none sm:rounded-l-lg"
-							src="img/estatium-henrique.png" alt="Líder">
+						<img
+						src="https://media.licdn.com/dms/image/D4D03AQFqMWsbKO1ZBQ/profile-displayphoto-shrink_200_200/0/1722345969885?e=2147483647&v=beta&t=wgaGkJtDxHk66EfCyOFxQyJwkNCQVLihkPJKiAQhoJU"
+						alt="Amabile Correa Baron Ferrari">
 						<div class="p-5">
 							<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
 								Amabile Correa Baron Ferrari</h3>
@@ -157,7 +158,7 @@
 					<div
 						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange">
 						<img class="w-64 rounded-lg sm:rounded-none sm:rounded-l-lg"
-							src="img/estatium-miguel.png" alt="Marketing">
+							src="https://media.licdn.com/dms/image/D4D03AQGxMxaXeyveIg/profile-displayphoto-shrink_200_200/0/1704750979851?e=2147483647&v=beta&t=b57Egcm90diTQzWj2DvRZYiYjG2HLBo86yDky7s9SHQ" alt="Pietra Cardoso Lenzi">
 						<div class="p-5">
 							<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
 								Pietra Cardoso Lenzi</h3>
@@ -168,8 +169,10 @@
 						</div>
 					</div>
 					<div
-						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange">
-						<img src="img/estatium-enzo.png" alt="Front-end">
+						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange mt-bottom">
+						<img
+							src="https://media.licdn.com/dms/image/D4D03AQGqNGKZNwM_Dw/profile-displayphoto-shrink_200_200/0/1722345238529?e=2147483647&v=beta&t=iX6zBPWAXQ_AS3O3BcgwG6WjVQdkCzYFmhYwHIfXZdc"
+							alt="Pedro Henrique José">
 						<div class="p-5">
 							<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
 								Pedro Henrique José</h3>
@@ -180,10 +183,10 @@
 						</div>
 					</div>
 					<div
-						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange">
+						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange mt-bottom">
 						<img
 							src="https://media.licdn.com/dms/image/D4D03AQHPogYqrvddIA/profile-displayphoto-shrink_200_200/0/1708396343398?e=2147483647&v=beta&t=wsOdnAqMwV1xJTndT0VEhnfnKiuB_zZe2jVYUpBHWAg"
-							alt="Minha Imagem PNG">
+							alt="Eduardo Hessmann Rohleder">
 						<div class="p-5">
 							<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
 								Eduardo Hessmann Rohleder</h3>
@@ -195,17 +198,19 @@
 					</div>
 
 				</div>
-
 				<div
-					class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange">
-					<div class="p-5">
-						<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
-							Gustavo Libório Estevão</h3>
-						<span class="text-blazeOrange">Banco de dados</span>
-						<p class="mt-3 mb-4 font-light text-nickel">Gustavo gerencia a
+						class="items-center bg-white rounded-lg shadow-lg sm:flex border-4 border-blazeOrange ml-left align-center mr-right mt-top">
+						<img
+							src="https://media.licdn.com/dms/image/D4D03AQFYsIcpRx7Wkg/profile-displayphoto-shrink_200_200/0/1722424862546?e=2147483647&v=beta&t=5zmmChia6XirFLrxNS3r7rQlpqdE0PAT9GC3KNBjOn0"
+							alt="Gustavo Libório Estevão">
+						<div class="p-5">
+							<h3 class="text-xl font-bold tracking-estatium text-blazeOrange">
+								Gustavo Libório Estevão</h3>
+							<span class="text-blazeOrange">Gustavo Libório Estevão</span>
+							<p class="mt-3 mb-4 font-light text-nickel">Gustavo gerencia a
 							arquitetura de banco de dados e as estratégias de gerenciamento
 							de dados para a TextilTech.</p>
-					</div>
+						</div>
 				</div>
 			</div>
 		</section>

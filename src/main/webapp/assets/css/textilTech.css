@@ -468,6 +468,22 @@ video {
 	margin-left: auto;
 }
 
+.ml-left {
+	margin-left: 270px;
+}
+
+.mr-right {
+	margin-right: 270px;
+}
+
+.mt-top {
+	margin-top: 10px;
+}
+
+.mt-bottom {
+	margin-bottom: 10px;
+}
+
 .mr-1 {
 	margin-right: 0.25rem;
 }
@@ -677,6 +693,10 @@ video {
 	align-items: center;
 }
 
+.align-center{
+	align-items: center;
+}
+
 .items-stretch {
 	align-items: stretch;
 }
@@ -807,6 +827,11 @@ video {
 .bg-blazeOrange {
 	--tw-bg-opacity: 1;
 	background-color: #133A59
+}
+
+.bg-blazeGray {
+	--tw-bg-opacity: 1;
+	background-color: rgb(192, 192, 192)
 }
 
 .bg-orchidBlossom {
