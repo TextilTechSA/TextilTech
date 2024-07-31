@@ -217,32 +217,41 @@
 		<section class="bg-blazeOrange rounded">
 			<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
 				<div class="max-w-screen-lg text-white sm:text-lg">
+				<style>
+        .custom-list {
+            list-style-type: none; /* Remove o estilo padrão das bolinhas */
+            padding-left: 0; /* Remove o padding padrão */
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 1.5em; /* Espaço para a bolinha */
+            margin-bottom: 0.5em; /* Espaço entre os itens */
+        }
+
+        .custom-list li::before {
+            content: '\2022'; /* Unicode para a bolinha */
+            position: absolute;
+            left: 0;
+            color: #FFFFFF; /* Cor da bolinha branca */
+            font-size: 1.5em; /* Tamanho da bolinha, ajuste conforme necessário */
+            line-height: 1em; /* Alinha a bolinha com o texto */
+        }
+
+        .custom-list .bold {
+            font-weight: bold; /* Negrito para as palavras iniciais */
+        }
+    </style>
 					<h2
 						class="mb-4 text-4xl tracking-estatium font-extrabold text-white uppercase">Nossos
 						valores</h2>
-					<ol class="mb-4 font-light">
-						<li>Inovação: Comprometimento com a criação de soluções
-							tecnológicas avançadas que atendam às necessidades em constante
-							evolução da indústria têxtil;<br>
-						</li>
-
-						<li>Qualidade: Foco incessante na entrega de produtos e
-							serviços que superem as expectativas dos clientes;<br>
-						</li>
-
-						<li>Transparência: Manter uma comunicação clara e honesta com
-							nossos clientes, parceiros e colaboradores;<br>
-						</li>
-
-						<li>Sustentabilidade: Promover práticas que minimizem o
-							impacto ambiental e contribuam para o desenvolvimento
-							sustentável;<br>
-						</li>
-
-						<li>Excelência no Atendimento: Prover um suporte excepcional,
-							garantindo que nossos clientes obtenham o máximo benefício de
-							nossas soluções.</li>
-					</ol>
+					<ol class="custom-list">
+        <li><span class="bold">Inovação:</span> Comprometimento com a criação de soluções tecnológicas avançadas que atendam às necessidades em constante evolução da indústria têxtil;</li>
+        <li><span class="bold">Qualidade:</span> Foco incessante na entrega de produtos e serviços que superem as expectativas dos clientes;</li>
+        <li><span class="bold">Transparência:</span> Manter uma comunicação clara e honesta com nossos clientes, parceiros e colaboradores;</li>
+        <li><span class="bold">Sustentabilidade:</span> Promover práticas que minimizem o impacto ambiental e contribuam para o desenvolvimento sustentável;</li>
+        <li><span class="bold">Excelência no Atendimento:</span> Prover um suporte excepcional, garantindo que nossos clientes obtenham o máximo benefício de nossas soluções.</li>
+    </ol>
 				</div>
 			</div>
 		</section>

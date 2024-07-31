@@ -21,15 +21,15 @@
         margin-top: 2rem;
     }
     .norma-details h4 {
-        color: #1f2937; /* Cor do texto: cinza-900 */
+        color: #ffffff; /* Cor do texto: cinza-900 */
         margin-right: 1rem;
-        background-color: #e0f7fa; /* Fundo azul claro */
+        background-color: #133a59; /* Fundo azul claro */
         padding: 0.5rem 1rem;
         border-radius: 0.375rem;
         font-size: 1.125rem;
     }
     .norma-details span {
-        color: #4b5563; /* Cor do texto: cinza-700 */
+        color: #133a59; /* Cor do texto: cinza-700 */
         font-size: 1.125rem;
     }
     .norma-details div {
@@ -40,10 +40,10 @@
         display: flex;
         align-items: center;
         border-radius: 0.375rem;
-        background-color: #ffffff;
+        background-color: #e5e7eb;
     }
     .norma-details div:hover {
-        background-color: #f0fdf4; /* Cor do fundo ao passar o mouse: verde-50 */
+        background-color: #969696; /* Cor do fundo ao passar o mouse: verde-50 */
     }
     .header {
         background: linear-gradient(to right, #133A59, #133A59); /* Gradiente azul escuro */
@@ -102,9 +102,9 @@
                         <span>${norma.tipo}</span>
                     </div>
                     <div class="flex items-center">
-                        <i class="icon fas fa-info-circle"></i>
-                        <h4 class="font-semibold">Descrição:</h4>
-                        <span>${norma.descricao}</span>
+                        <i class="icon fas fa-check-circle"></i>
+                        <h4 class="font-semibold">Homologação:</h4>
+                        <span>${norma.homologacao}</span>
                     </div>
                     <div class="flex items-center">
                         <i class="icon fas fa-calendar-alt"></i>
@@ -112,9 +112,9 @@
                         <span>${norma.dataAberturaNorma}</span>
                     </div>
                     <div class="flex items-center">
-                        <i class="icon fas fa-check-circle"></i>
-                        <h4 class="font-semibold">Homologação:</h4>
-                        <span>${norma.homologacao}</span>
+                        <i class="icon fas fa-info-circle"></i>
+                        <h4 class="font-semibold">Descrição:</h4>
+                        <span>${norma.descricao}</span>
                     </div>
                 </div>
             </div>
