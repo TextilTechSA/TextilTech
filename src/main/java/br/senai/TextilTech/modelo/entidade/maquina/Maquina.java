@@ -39,10 +39,10 @@ public class Maquina implements Serializable {
 	@Column(name = "tipo_maquina", length = 65, nullable = false)
 	private String tipo;
 
-	@Column(name = "desc_maquina", length = 65, nullable = false)
+	@Column(name = "desc_maquina", length = 100, nullable = false)
 	private String descricao;
 	
-	@Column(name = "funcionamento_maquina", length = 65, nullable = false)
+	@Column(name = "funcionamento_maquina", length = 65535, nullable = false)
 	private String funcionamento;
 
 	@Column(name = "horario_inicio_operacao", length = 65, nullable = true)
