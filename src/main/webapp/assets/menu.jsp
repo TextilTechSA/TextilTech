@@ -59,7 +59,7 @@
                     <a href="home"
                         class="flex items-center p-2 text-base text-blazeOrange border border-blazeOrange rounded-lg hover:border-white hover:bg-blazeOrange hover:text-white group">
                         <%@include file="../../../assets/img/Inicio-SVG.jsp"%> 
-                        <span class="ml-3">Inï¿½cio</span>
+                        <span class="ml-3">Início</span>
                     </a>
                 </li>
                 <!-- Mï¿½quinas Dropdown -->
@@ -67,7 +67,7 @@
                     <button onclick="toggleDropdown('maquinasDropdown')"
                         class="flex items-center p-2 text-base text-blazeOrange border border-blazeOrange rounded-lg hover:border-white hover:bg-blazeOrange hover:text-white group w-full">
                         <%@include file="../../../assets/img/Adicionar-Maquina-SVG.jsp"%> 
-                        <span class="ml-3">Mï¿½quinas</span>
+                        <span class="ml-3">Máquinas</span>
                     </button>
                     <ul id="maquinasDropdown" class="hidden mt-2 space-y-2 pl-4 dropdown-menu">
                         <li>
@@ -76,7 +76,7 @@
                                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="12" fill="#133a59" />
                                 </svg>
-                                <span class="ml-3 font-semibold">Adicionar Mï¿½quinas</span>
+                                <span class="ml-3 font-semibold">Adicionar Máquinas</span>
                             </a>
                         </li>
                         <li>
@@ -85,7 +85,7 @@
                                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="12" fill="#133a59" />
                                 </svg>
-                                <span class="ml-3 font-semibold">Visualizar Mï¿½quinas</span>
+                                <span class="ml-3 font-semibold">Visualizar Máquinas</span>
                             </a>
                         </li>
                     </ul>

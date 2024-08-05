@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
@@ -41,10 +41,10 @@
 				</div>
 				<div class="grid grid-cols-2 gap-4 mt-8">
 					<img class="w-full rounded-lg"
-						src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+						src="https://images.unsplash.com/photo-1462396240927-52058a6a84ec?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLWxpa2VkfDE3fHx8ZW58MHx8fHx8"
 						alt="office content 1"> <img
 						class="mt-4 w-full lg:mt-10 rounded-lg"
-						src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+						src="https://zenklub.com.br/blog/wp-content/uploads/2022/06/iStock-1352650187-min-scaled.jpg"
 						alt="office content 2">
 				</div>
 			</div>
