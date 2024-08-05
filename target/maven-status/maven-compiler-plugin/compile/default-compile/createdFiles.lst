@@ -1,0 +1,5 @@
+br\senai\TextilTech\modelo\entidade\usuario\Usuario_.class
+br\senai\TextilTech\modelo\entidade\funcao\Funcao_.class
+br\senai\TextilTech\modelo\entidade\maquina\Maquina_.class
+br\senai\TextilTech\modelo\entidade\usuario\funcionario\Funcionario_.class
+br\senai\TextilTech\modelo\entidade\norma\Norma_.class
