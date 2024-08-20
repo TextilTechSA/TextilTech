@@ -39,7 +39,6 @@
                     <tr class="bg-gray-200">
                         <th class="px-4 py-2">Nome</th>
                         <th class="px-4 py-2">Tipo</th>
-                        <th class="px-4 py-2">Descrição</th>
                         <th class="px-4 py-2">Data de Abertura</th>
                         <th class="px-4 py-2">Homologação</th>
                         <th class="px-4 py-2">Ação</th>
@@ -50,7 +49,6 @@
                         <tr>
                             <td class="border px-4 py-2">${norma.nome}</td>
                             <td class="border px-4 py-2">${norma.tipo}</td>
-                            <td class="border px-4 py-2">${norma.descricao}</td>
                             <td class="border px-4 py-2">${norma.dataAberturaNorma}</td>
                             <td class="border px-4 py-2">${norma.homologacao}</td>
                             <td class="border px-4 py-2">

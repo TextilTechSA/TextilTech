@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -42,7 +44,8 @@ public class Maquina implements Serializable {
 	@Column(name = "desc_maquina", length = 100, nullable = false)
 	private String descricao;
 	
-	@Column(name = "funcionamento_maquina", length = 65535, nullable = false)
+	@Lob @Basic(fetch = FetchType.LAZY)
+	@Column(name = "funcionamento_maquina", nullable = false)
 	private String funcionamento;
 
 	@Column(name = "horario_inicio_operacao", length = 65, nullable = true)
