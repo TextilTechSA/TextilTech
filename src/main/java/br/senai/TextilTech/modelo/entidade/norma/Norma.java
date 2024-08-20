@@ -3,13 +3,16 @@ package br.senai.TextilTech.modelo.entidade.norma;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -30,7 +33,8 @@ public class Norma implements Serializable {
 	@Column(name = "tipo_norma", length = 65, nullable = false)
 	private String tipo;
 	
-	@Column(name = "desc_norma", length = 65, nullable = false)
+	@Lob @Basic(fetch = FetchType.LAZY)
+	@Column(name = "desc_norma", nullable = false)
 	private String descricao;
 
 	@Column(name = "data_abertura_norma", nullable = false)
