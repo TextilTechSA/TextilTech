@@ -78,9 +78,17 @@ public class Servlet extends HttpServlet {
 			case "/cadastro-maquina":
 				mostrarCadastroMaquina(request, response);
 				break;
+				
+			case "/editar-maquina":
+				mostrarEditarMaquina(request, response);
+				break;
 
 			case "/cadastro-funcionario":
 				mostrarCadastroFuncionario(request, response);
+				break;
+				
+			case "/editar-norma":
+				mostrarEditarNorma(request, response);
 				break;
 
 			case "/maquinas":
@@ -125,6 +133,22 @@ public class Servlet extends HttpServlet {
 
 			case "/inserir-maquina":
 				inserirMaquina(request, response);
+				break;
+				
+			case "/atualizar-maquina":
+				editarMaquina(request, response);
+				break;
+				
+			case "/deletar-maquina":
+				deletarMaquina(request, response);
+				break;
+				
+			case "/atualizar-norma":
+				editarNorma(request, response);
+				break;
+				
+			case "/deletar-norma":
+				deletarNorma(request, response);
 				break;
 
 			case "/resultado-pesquisa-maquina":
@@ -200,6 +224,29 @@ public class Servlet extends HttpServlet {
 			throws SQLException, IOException, ServletException {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/cadastro-maquina.jsp");
+		dispatcher.forward(request, response);
+	}
+	
+	private void mostrarEditarMaquina(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id")));
+		request.setAttribute("maquina", maquina);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/editar-maquina.jsp");
+		dispatcher.forward(request, response);
+	}
+	
+	private void mostrarEditarNorma(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		Norma norma = normaDAO.buscarNormaPorId(Long.parseLong(request.getParameter("id")));
+		request.setAttribute("norma", norma);
+		
+		List<Maquina> maquinas = maquinaDAO.buscarMaquinas();
+		request.setAttribute("maquinas", maquinas);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("assets/editar-norma.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -333,6 +380,31 @@ public class Servlet extends HttpServlet {
 
 		response.sendRedirect("maquinas");
 	}
+	
+	private void editarMaquina(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		Long id = Long.parseLong(request.getParameter("id"));
+		String nome = request.getParameter("nome");
+		String tipo = request.getParameter("tipo");
+		String descricao = request.getParameter("descricao");
+		String funcionamento = request.getParameter("funcionamento");
+
+		// Formato de tempo esperado
+		LocalTime horarioInicioOperacao = LocalTime.parse(request.getParameter("horarioInicioOperacao"),
+				TIME_FORMATTER);
+		LocalTime horarioFechamentoOperacao = LocalTime.parse(request.getParameter("horarioFechamentoOperacao"),
+				TIME_FORMATTER);
+
+		String capacidadeOperacao = request.getParameter("capacidadeOperacao");
+		String nivelPerigo = request.getParameter("nivelPerigo");
+
+		// insere no banco de dados
+		maquinaDAO.atualizarMaquina(new Maquina(id, nome, tipo, descricao, funcionamento, horarioInicioOperacao,
+				horarioFechamentoOperacao, capacidadeOperacao, nivelPerigo));
+
+		response.sendRedirect("maquinas");
+	}
 
 	private void inserirFuncao(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
@@ -342,6 +414,55 @@ public class Servlet extends HttpServlet {
 		funcaoDAO.inserirFuncao(new Funcao(descricao));
 
 		response.sendRedirect("");
+
+	}
+	
+	private void deletarMaquina(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id")));
+		
+		maquinaDAO.deletarMaquina(maquina);
+		
+		response.sendRedirect("maquinas");
+
+	}
+	
+	private void editarNorma(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		Long id = Long.parseLong(request.getParameter("id"));
+		String nome = request.getParameter("nome");
+		String tipo = request.getParameter("tipo");
+		String descricao = request.getParameter("descricao");
+		String homologacao = request.getParameter("homologacao");
+		LocalDate dataAberturaNorma = LocalDate.now();
+
+		Norma norma = new Norma(id, nome, tipo, descricao, dataAberturaNorma, homologacao);
+
+		normaDAO.atualizarNorma(norma);
+
+		Maquina maquina = maquinaDAO.buscarMaquinaPorId(Long.parseLong(request.getParameter("id_maquina")));
+
+		maquina.inserirNorma(norma);
+
+		maquinaDAO.atualizarMaquina(maquina);
+
+		response.sendRedirect("normas");
+
+	}
+	
+	
+	
+	
+	private void deletarNorma(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		
+		Norma norma = normaDAO.buscarNormaPorId(Long.parseLong(request.getParameter("id")));
+		
+		normaDAO.deletarNorma(norma);
+		
+		response.sendRedirect("normas");
 
 	}
 
