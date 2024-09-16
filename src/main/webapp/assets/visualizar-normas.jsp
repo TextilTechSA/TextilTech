@@ -42,6 +42,8 @@
                         <th class="px-4 py-2">Data de Abertura</th>
                         <th class="px-4 py-2">Homologação</th>
                         <th class="px-4 py-2">Ação</th>
+                        <th class="px-4 py-2">Ação</th>
+                        <th class="px-4 py-2">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,6 +55,12 @@
                             <td class="border px-4 py-2">${norma.homologacao}</td>
                             <td class="border px-4 py-2">
                                 <a href="perfil-norma?id=<c:out value='${norma.id}'/>" class="action-button">Ver Norma</a>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <a href="editar-norma?id=<c:out value='${norma.id}'/>" class="action-button">editar Norma</a>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <a href="deletar-norma?id=<c:out value='${norma.id}'/>" class="action-button">Deletar Norma</a>
                             </td>
                         </tr>
                     </c:forEach>

@@ -63,6 +63,16 @@ public class Norma implements Serializable {
 		this.dataRevisao = dataRevisaoNorma;
 		this.homologacao = homologacao;
 	}
+	
+	public Norma(Long id, String nome, String tipo, String descricao, LocalDate dataAberturaNorma, String homologacao) {
+
+		this.id = id;
+		this.nome = nome;
+		this.tipo = tipo;
+		this.descricao = descricao;
+		this.dataAbertura = dataAberturaNorma;
+		this.homologacao = homologacao;
+	}
 
 	public Norma(String nome, String tipo, String descricao, LocalDate dataAberturaNorma, LocalDate dataEdicaoNorma,
 			LocalDate dataRevisaoNorma, String homologacao) {

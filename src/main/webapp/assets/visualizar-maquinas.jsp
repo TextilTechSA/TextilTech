@@ -37,6 +37,8 @@
                         <th class="px-4 py-2">Tipo</th>
                         <th class="px-4 py-2">Descrição</th>
                         <th class="px-4 py-2">Ação</th>
+                        <th class="px-4 py-2">Ação</th>
+                        <th class="px-4 py-2">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +49,12 @@
                             <td class="border px-4 py-2">${maquina.descricao}</td>
                             <td class="border px-4 py-2">
                                 <a href="perfil-maquina?id=<c:out value='${maquina.id}'/>" class="action-button">Ver Máquina</a>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <a href="editar-maquina?id=<c:out value='${maquina.id}'/>" class="action-button">Editar Máquina</a>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <a href="deletar-maquina?id=<c:out value='${maquina.id}'/>" class="action-button">Deletar Máquina</a>
                             </td>
                         </tr>
                     </c:forEach>
